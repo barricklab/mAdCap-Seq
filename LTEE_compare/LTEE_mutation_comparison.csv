@@ -1,0 +1,1537 @@
+﻿gene,population,generation,mutated,mutator,strain
+ybaL,A–1,500,FALSE,non-mutator,REL762C
+topA,A–1,500,TRUE,non-mutator,REL762C
+pykF,A–1,500,FALSE,non-mutator,REL762C
+spoT,A–1,500,FALSE,non-mutator,REL762C
+yijC (fabR),A–1,500,TRUE,non-mutator,REL762C
+hslU,A–1,500,FALSE,non-mutator,REL762C
+iclR,A–1,500,FALSE,non-mutator,REL762C
+nadR,A–1,500,FALSE,non-mutator,REL762C
+ybaL,A–1,500,FALSE,non-mutator,REL762B
+topA,A–1,500,TRUE,non-mutator,REL762B
+pykF,A–1,500,FALSE,non-mutator,REL762B
+spoT,A–1,500,FALSE,non-mutator,REL762B
+yijC (fabR),A–1,500,TRUE,non-mutator,REL762B
+hslU,A–1,500,FALSE,non-mutator,REL762B
+iclR,A–1,500,FALSE,non-mutator,REL762B
+nadR,A–1,500,FALSE,non-mutator,REL762B
+ybaL,A–1,1000,FALSE,non-mutator,REL964B
+topA,A–1,1000,TRUE,non-mutator,REL964B
+pykF,A–1,1000,FALSE,non-mutator,REL964B
+spoT,A–1,1000,TRUE,non-mutator,REL964B
+yijC (fabR),A–1,1000,FALSE,non-mutator,REL964B
+hslU,A–1,1000,FALSE,non-mutator,REL964B
+iclR,A–1,1000,FALSE,non-mutator,REL964B
+nadR,A–1,1000,FALSE,non-mutator,REL964B
+ybaL,A–1,1000,FALSE,non-mutator,REL964C
+topA,A–1,1000,TRUE,non-mutator,REL964C
+pykF,A–1,1000,TRUE,non-mutator,REL964C
+spoT,A–1,1000,FALSE,non-mutator,REL964C
+yijC (fabR),A–1,1000,TRUE,non-mutator,REL964C
+hslU,A–1,1000,FALSE,non-mutator,REL964C
+iclR,A–1,1000,FALSE,non-mutator,REL964C
+nadR,A–1,1000,FALSE,non-mutator,REL964C
+ybaL,A–1,1500,FALSE,non-mutator,REL1068B
+topA,A–1,1500,TRUE,non-mutator,REL1068B
+pykF,A–1,1500,TRUE,non-mutator,REL1068B
+spoT,A–1,1500,TRUE,non-mutator,REL1068B
+yijC (fabR),A–1,1500,FALSE,non-mutator,REL1068B
+hslU,A–1,1500,FALSE,non-mutator,REL1068B
+iclR,A–1,1500,FALSE,non-mutator,REL1068B
+nadR,A–1,1500,FALSE,non-mutator,REL1068B
+ybaL,A–1,1500,FALSE,non-mutator,REL1068C
+topA,A–1,1500,TRUE,non-mutator,REL1068C
+pykF,A–1,1500,TRUE,non-mutator,REL1068C
+spoT,A–1,1500,TRUE,non-mutator,REL1068C
+yijC (fabR),A–1,1500,FALSE,non-mutator,REL1068C
+hslU,A–1,1500,FALSE,non-mutator,REL1068C
+iclR,A–1,1500,FALSE,non-mutator,REL1068C
+nadR,A–1,1500,FALSE,non-mutator,REL1068C
+ybaL,A–1,2000,FALSE,non-mutator,REL1164A
+topA,A–1,2000,TRUE,non-mutator,REL1164A
+pykF,A–1,2000,TRUE,non-mutator,REL1164A
+spoT,A–1,2000,TRUE,non-mutator,REL1164A
+yijC (fabR),A–1,2000,FALSE,non-mutator,REL1164A
+hslU,A–1,2000,FALSE,non-mutator,REL1164A
+iclR,A–1,2000,FALSE,non-mutator,REL1164A
+nadR,A–1,2000,FALSE,non-mutator,REL1164A
+ybaL,A–1,2000,FALSE,non-mutator,REL1164B
+topA,A–1,2000,TRUE,non-mutator,REL1164B
+pykF,A–1,2000,TRUE,non-mutator,REL1164B
+spoT,A–1,2000,TRUE,non-mutator,REL1164B
+yijC (fabR),A–1,2000,FALSE,non-mutator,REL1164B
+hslU,A–1,2000,FALSE,non-mutator,REL1164B
+iclR,A–1,2000,FALSE,non-mutator,REL1164B
+nadR,A–1,2000,FALSE,non-mutator,REL1164B
+ybaL,A–1,5000,TRUE,non-mutator,REL2179A
+topA,A–1,5000,TRUE,non-mutator,REL2179A
+pykF,A–1,5000,TRUE,non-mutator,REL2179A
+spoT,A–1,5000,TRUE,non-mutator,REL2179A
+yijC (fabR),A–1,5000,FALSE,non-mutator,REL2179A
+hslU,A–1,5000,TRUE,non-mutator,REL2179A
+iclR,A–1,5000,FALSE,non-mutator,REL2179A
+nadR,A–1,5000,TRUE,non-mutator,REL2179A
+ybaL,A–1,5000,TRUE,non-mutator,REL2179B
+topA,A–1,5000,TRUE,non-mutator,REL2179B
+pykF,A–1,5000,TRUE,non-mutator,REL2179B
+spoT,A–1,5000,TRUE,non-mutator,REL2179B
+yijC (fabR),A–1,5000,FALSE,non-mutator,REL2179B
+hslU,A–1,5000,TRUE,non-mutator,REL2179B
+iclR,A–1,5000,FALSE,non-mutator,REL2179B
+nadR,A–1,5000,FALSE,non-mutator,REL2179B
+ybaL,A–1,10000,TRUE,non-mutator,REL4536A
+topA,A–1,10000,TRUE,non-mutator,REL4536A
+pykF,A–1,10000,TRUE,non-mutator,REL4536A
+spoT,A–1,10000,TRUE,non-mutator,REL4536A
+yijC (fabR),A–1,10000,FALSE,non-mutator,REL4536A
+hslU,A–1,10000,TRUE,non-mutator,REL4536A
+iclR,A–1,10000,FALSE,non-mutator,REL4536A
+nadR,A–1,10000,FALSE,non-mutator,REL4536A
+ybaL,A–1,10000,TRUE,non-mutator,REL4536B
+topA,A–1,10000,TRUE,non-mutator,REL4536B
+pykF,A–1,10000,TRUE,non-mutator,REL4536B
+spoT,A–1,10000,TRUE,non-mutator,REL4536B
+yijC (fabR),A–1,10000,FALSE,non-mutator,REL4536B
+hslU,A–1,10000,TRUE,non-mutator,REL4536B
+iclR,A–1,10000,FALSE,non-mutator,REL4536B
+nadR,A–1,10000,FALSE,non-mutator,REL4536B
+ybaL,A–1,15000,TRUE,non-mutator,REL7177A
+topA,A–1,15000,TRUE,non-mutator,REL7177A
+pykF,A–1,15000,TRUE,non-mutator,REL7177A
+spoT,A–1,15000,TRUE,non-mutator,REL7177A
+yijC (fabR),A–1,15000,FALSE,non-mutator,REL7177A
+hslU,A–1,15000,TRUE,non-mutator,REL7177A
+iclR,A–1,15000,TRUE,non-mutator,REL7177A
+nadR,A–1,15000,TRUE,non-mutator,REL7177A
+ybaL,A–1,15000,TRUE,non-mutator,REL7177B
+topA,A–1,15000,TRUE,non-mutator,REL7177B
+pykF,A–1,15000,TRUE,non-mutator,REL7177B
+spoT,A–1,15000,TRUE,non-mutator,REL7177B
+yijC (fabR),A–1,15000,FALSE,non-mutator,REL7177B
+hslU,A–1,15000,TRUE,non-mutator,REL7177B
+iclR,A–1,15000,TRUE,non-mutator,REL7177B
+nadR,A–1,15000,TRUE,non-mutator,REL7177B
+ybaL,A–1,20000,TRUE,non-mutator,REL8593A
+topA,A–1,20000,TRUE,non-mutator,REL8593A
+pykF,A–1,20000,TRUE,non-mutator,REL8593A
+spoT,A–1,20000,TRUE,non-mutator,REL8593A
+yijC (fabR),A–1,20000,FALSE,non-mutator,REL8593A
+hslU,A–1,20000,TRUE,non-mutator,REL8593A
+iclR,A–1,20000,TRUE,non-mutator,REL8593A
+nadR,A–1,20000,TRUE,non-mutator,REL8593A
+ybaL,A–1,20000,TRUE,non-mutator,REL8593B
+topA,A–1,20000,TRUE,non-mutator,REL8593B
+pykF,A–1,20000,TRUE,non-mutator,REL8593B
+spoT,A–1,20000,TRUE,non-mutator,REL8593B
+yijC (fabR),A–1,20000,FALSE,non-mutator,REL8593B
+hslU,A–1,20000,TRUE,non-mutator,REL8593B
+iclR,A–1,20000,TRUE,non-mutator,REL8593B
+nadR,A–1,20000,TRUE,non-mutator,REL8593B
+ybaL,A–2,500,FALSE,non-mutator,REL763A
+topA,A–2,500,FALSE,non-mutator,REL763A
+pykF,A–2,500,TRUE,non-mutator,REL763A
+spoT,A–2,500,FALSE,non-mutator,REL763A
+yijC (fabR),A–2,500,TRUE,non-mutator,REL763A
+hslU,A–2,500,FALSE,non-mutator,REL763A
+iclR,A–2,500,FALSE,non-mutator,REL763A
+nadR,A–2,500,FALSE,non-mutator,REL763A
+ybaL,A–2,500,FALSE,non-mutator,REL763B
+topA,A–2,500,FALSE,non-mutator,REL763B
+pykF,A–2,500,FALSE,non-mutator,REL763B
+spoT,A–2,500,FALSE,non-mutator,REL763B
+yijC (fabR),A–2,500,FALSE,non-mutator,REL763B
+hslU,A–2,500,FALSE,non-mutator,REL763B
+iclR,A–2,500,FALSE,non-mutator,REL763B
+nadR,A–2,500,FALSE,non-mutator,REL763B
+ybaL,A–2,1000,FALSE,non-mutator,REL965A
+topA,A–2,1000,FALSE,non-mutator,REL965A
+pykF,A–2,1000,TRUE,non-mutator,REL965A
+spoT,A–2,1000,TRUE,non-mutator,REL965A
+yijC (fabR),A–2,1000,FALSE,non-mutator,REL965A
+hslU,A–2,1000,FALSE,non-mutator,REL965A
+iclR,A–2,1000,FALSE,non-mutator,REL965A
+nadR,A–2,1000,FALSE,non-mutator,REL965A
+ybaL,A–2,1000,FALSE,non-mutator,REL965B
+topA,A–2,1000,FALSE,non-mutator,REL965B
+pykF,A–2,1000,TRUE,non-mutator,REL965B
+spoT,A–2,1000,TRUE,non-mutator,REL965B
+yijC (fabR),A–2,1000,FALSE,non-mutator,REL965B
+hslU,A–2,1000,FALSE,non-mutator,REL965B
+iclR,A–2,1000,FALSE,non-mutator,REL965B
+nadR,A–2,1000,FALSE,non-mutator,REL965B
+ybaL,A–2,1500,FALSE,non-mutator,REL1069A
+topA,A–2,1500,FALSE,non-mutator,REL1069A
+pykF,A–2,1500,TRUE,non-mutator,REL1069A
+spoT,A–2,1500,TRUE,non-mutator,REL1069A
+yijC (fabR),A–2,1500,FALSE,non-mutator,REL1069A
+hslU,A–2,1500,FALSE,non-mutator,REL1069A
+iclR,A–2,1500,FALSE,non-mutator,REL1069A
+nadR,A–2,1500,FALSE,non-mutator,REL1069A
+ybaL,A–2,1500,FALSE,non-mutator,REL1069B
+topA,A–2,1500,FALSE,non-mutator,REL1069B
+pykF,A–2,1500,TRUE,non-mutator,REL1069B
+spoT,A–2,1500,TRUE,non-mutator,REL1069B
+yijC (fabR),A–2,1500,FALSE,non-mutator,REL1069B
+hslU,A–2,1500,FALSE,non-mutator,REL1069B
+iclR,A–2,1500,FALSE,non-mutator,REL1069B
+nadR,A–2,1500,FALSE,non-mutator,REL1069B
+ybaL,A–2,2000,FALSE,non-mutator,REL1165A
+topA,A–2,2000,FALSE,non-mutator,REL1165A
+pykF,A–2,2000,TRUE,non-mutator,REL1165A
+spoT,A–2,2000,TRUE,non-mutator,REL1165A
+yijC (fabR),A–2,2000,FALSE,non-mutator,REL1165A
+hslU,A–2,2000,FALSE,non-mutator,REL1165A
+iclR,A–2,2000,FALSE,non-mutator,REL1165A
+nadR,A–2,2000,FALSE,non-mutator,REL1165A
+ybaL,A–2,2000,FALSE,non-mutator,REL11829
+topA,A–2,2000,FALSE,non-mutator,REL11829
+pykF,A–2,2000,TRUE,non-mutator,REL11829
+spoT,A–2,2000,TRUE,non-mutator,REL11829
+yijC (fabR),A–2,2000,FALSE,non-mutator,REL11829
+hslU,A–2,2000,FALSE,non-mutator,REL11829
+iclR,A–2,2000,FALSE,non-mutator,REL11829
+nadR,A–2,2000,FALSE,non-mutator,REL11829
+ybaL,A–2,5000,TRUE,point-mutator,REL2180A
+topA,A–2,5000,FALSE,point-mutator,REL2180A
+pykF,A–2,5000,TRUE,point-mutator,REL2180A
+spoT,A–2,5000,TRUE,point-mutator,REL2180A
+yijC (fabR),A–2,5000,FALSE,point-mutator,REL2180A
+hslU,A–2,5000,TRUE,point-mutator,REL2180A
+iclR,A–2,5000,TRUE,point-mutator,REL2180A
+nadR,A–2,5000,TRUE,point-mutator,REL2180A
+ybaL,A–2,5000,TRUE,point-mutator,REL2180B
+topA,A–2,5000,FALSE,point-mutator,REL2180B
+pykF,A–2,5000,TRUE,point-mutator,REL2180B
+spoT,A–2,5000,TRUE,point-mutator,REL2180B
+yijC (fabR),A–2,5000,FALSE,point-mutator,REL2180B
+hslU,A–2,5000,TRUE,point-mutator,REL2180B
+iclR,A–2,5000,TRUE,point-mutator,REL2180B
+nadR,A–2,5000,TRUE,point-mutator,REL2180B
+ybaL,A–2,10000,TRUE,point-mutator,REL4537A
+topA,A–2,10000,TRUE,point-mutator,REL4537A
+pykF,A–2,10000,TRUE,point-mutator,REL4537A
+spoT,A–2,10000,TRUE,point-mutator,REL4537A
+yijC (fabR),A–2,10000,FALSE,point-mutator,REL4537A
+hslU,A–2,10000,TRUE,point-mutator,REL4537A
+iclR,A–2,10000,TRUE,point-mutator,REL4537A
+nadR,A–2,10000,TRUE,point-mutator,REL4537A
+ybaL,A–2,10000,TRUE,point-mutator,REL4537B
+topA,A–2,10000,TRUE,point-mutator,REL4537B
+pykF,A–2,10000,TRUE,point-mutator,REL4537B
+spoT,A–2,10000,TRUE,point-mutator,REL4537B
+yijC (fabR),A–2,10000,FALSE,point-mutator,REL4537B
+hslU,A–2,10000,TRUE,point-mutator,REL4537B
+iclR,A–2,10000,TRUE,point-mutator,REL4537B
+nadR,A–2,10000,TRUE,point-mutator,REL4537B
+ybaL,A–2,15000,TRUE,point-mutator,REL7178A
+topA,A–2,15000,FALSE,point-mutator,REL7178A
+pykF,A–2,15000,TRUE,point-mutator,REL7178A
+spoT,A–2,15000,TRUE,point-mutator,REL7178A
+yijC (fabR),A–2,15000,FALSE,point-mutator,REL7178A
+hslU,A–2,15000,TRUE,point-mutator,REL7178A
+iclR,A–2,15000,TRUE,point-mutator,REL7178A
+nadR,A–2,15000,TRUE,point-mutator,REL7178A
+ybaL,A–2,15000,TRUE,point-mutator,REL7178B
+topA,A–2,15000,TRUE,point-mutator,REL7178B
+pykF,A–2,15000,TRUE,point-mutator,REL7178B
+spoT,A–2,15000,TRUE,point-mutator,REL7178B
+yijC (fabR),A–2,15000,FALSE,point-mutator,REL7178B
+hslU,A–2,15000,TRUE,point-mutator,REL7178B
+iclR,A–2,15000,TRUE,point-mutator,REL7178B
+nadR,A–2,15000,TRUE,point-mutator,REL7178B
+ybaL,A–2,20000,TRUE,point-mutator,REL11830
+topA,A–2,20000,FALSE,point-mutator,REL11830
+pykF,A–2,20000,TRUE,point-mutator,REL11830
+spoT,A–2,20000,TRUE,point-mutator,REL11830
+yijC (fabR),A–2,20000,FALSE,point-mutator,REL11830
+hslU,A–2,20000,TRUE,point-mutator,REL11830
+iclR,A–2,20000,TRUE,point-mutator,REL11830
+nadR,A–2,20000,TRUE,point-mutator,REL11830
+ybaL,A–2,20000,TRUE,point-mutator,REL11831
+topA,A–2,20000,TRUE,point-mutator,REL11831
+pykF,A–2,20000,TRUE,point-mutator,REL11831
+spoT,A–2,20000,TRUE,point-mutator,REL11831
+yijC (fabR),A–2,20000,FALSE,point-mutator,REL11831
+hslU,A–2,20000,TRUE,point-mutator,REL11831
+iclR,A–2,20000,TRUE,point-mutator,REL11831
+nadR,A–2,20000,TRUE,point-mutator,REL11831
+ybaL,A–3,500,FALSE,non-mutator,REL764A
+topA,A–3,500,FALSE,non-mutator,REL764A
+pykF,A–3,500,FALSE,non-mutator,REL764A
+spoT,A–3,500,FALSE,non-mutator,REL764A
+yijC (fabR),A–3,500,FALSE,non-mutator,REL764A
+hslU,A–3,500,FALSE,non-mutator,REL764A
+iclR,A–3,500,FALSE,non-mutator,REL764A
+nadR,A–3,500,FALSE,non-mutator,REL764A
+ybaL,A–3,500,FALSE,non-mutator,REL764B
+topA,A–3,500,TRUE,non-mutator,REL764B
+pykF,A–3,500,FALSE,non-mutator,REL764B
+spoT,A–3,500,FALSE,non-mutator,REL764B
+yijC (fabR),A–3,500,FALSE,non-mutator,REL764B
+hslU,A–3,500,FALSE,non-mutator,REL764B
+iclR,A–3,500,FALSE,non-mutator,REL764B
+nadR,A–3,500,FALSE,non-mutator,REL764B
+ybaL,A–3,1000,FALSE,non-mutator,REL966A
+topA,A–3,1000,FALSE,non-mutator,REL966A
+pykF,A–3,1000,TRUE,non-mutator,REL966A
+spoT,A–3,1000,FALSE,non-mutator,REL966A
+yijC (fabR),A–3,1000,TRUE,non-mutator,REL966A
+hslU,A–3,1000,FALSE,non-mutator,REL966A
+iclR,A–3,1000,FALSE,non-mutator,REL966A
+nadR,A–3,1000,FALSE,non-mutator,REL966A
+ybaL,A–3,1000,FALSE,non-mutator,REL966B
+topA,A–3,1000,FALSE,non-mutator,REL966B
+pykF,A–3,1000,TRUE,non-mutator,REL966B
+spoT,A–3,1000,FALSE,non-mutator,REL966B
+yijC (fabR),A–3,1000,FALSE,non-mutator,REL966B
+hslU,A–3,1000,FALSE,non-mutator,REL966B
+iclR,A–3,1000,FALSE,non-mutator,REL966B
+nadR,A–3,1000,FALSE,non-mutator,REL966B
+ybaL,A–3,1500,FALSE,non-mutator,REL1070A
+topA,A–3,1500,FALSE,non-mutator,REL1070A
+pykF,A–3,1500,TRUE,non-mutator,REL1070A
+spoT,A–3,1500,FALSE,non-mutator,REL1070A
+yijC (fabR),A–3,1500,TRUE,non-mutator,REL1070A
+hslU,A–3,1500,FALSE,non-mutator,REL1070A
+iclR,A–3,1500,TRUE,non-mutator,REL1070A
+nadR,A–3,1500,FALSE,non-mutator,REL1070A
+ybaL,A–3,1500,FALSE,non-mutator,REL1070B
+topA,A–3,1500,FALSE,non-mutator,REL1070B
+pykF,A–3,1500,TRUE,non-mutator,REL1070B
+spoT,A–3,1500,FALSE,non-mutator,REL1070B
+yijC (fabR),A–3,1500,FALSE,non-mutator,REL1070B
+hslU,A–3,1500,FALSE,non-mutator,REL1070B
+iclR,A–3,1500,FALSE,non-mutator,REL1070B
+nadR,A–3,1500,FALSE,non-mutator,REL1070B
+ybaL,A–3,2000,FALSE,non-mutator,REL1166A
+topA,A–3,2000,FALSE,non-mutator,REL1166A
+pykF,A–3,2000,TRUE,non-mutator,REL1166A
+spoT,A–3,2000,FALSE,non-mutator,REL1166A
+yijC (fabR),A–3,2000,FALSE,non-mutator,REL1166A
+hslU,A–3,2000,FALSE,non-mutator,REL1166A
+iclR,A–3,2000,FALSE,non-mutator,REL1166A
+nadR,A–3,2000,TRUE,non-mutator,REL1166A
+ybaL,A–3,2000,FALSE,non-mutator,REL1166B
+topA,A–3,2000,FALSE,non-mutator,REL1166B
+pykF,A–3,2000,TRUE,non-mutator,REL1166B
+spoT,A–3,2000,FALSE,non-mutator,REL1166B
+yijC (fabR),A–3,2000,TRUE,non-mutator,REL1166B
+hslU,A–3,2000,TRUE,non-mutator,REL1166B
+iclR,A–3,2000,FALSE,non-mutator,REL1166B
+nadR,A–3,2000,FALSE,non-mutator,REL1166B
+ybaL,A–3,5000,FALSE,non-mutator,REL2181A
+topA,A–3,5000,TRUE,non-mutator,REL2181A
+pykF,A–3,5000,TRUE,non-mutator,REL2181A
+spoT,A–3,5000,FALSE,non-mutator,REL2181A
+yijC (fabR),A–3,5000,FALSE,non-mutator,REL2181A
+hslU,A–3,5000,TRUE,non-mutator,REL2181A
+iclR,A–3,5000,FALSE,non-mutator,REL2181A
+nadR,A–3,5000,FALSE,non-mutator,REL2181A
+ybaL,A–3,5000,FALSE,non-mutator,ZDB409
+topA,A–3,5000,TRUE,non-mutator,ZDB409
+pykF,A–3,5000,TRUE,non-mutator,ZDB409
+spoT,A–3,5000,FALSE,non-mutator,ZDB409
+yijC (fabR),A–3,5000,FALSE,non-mutator,ZDB409
+hslU,A–3,5000,TRUE,non-mutator,ZDB409
+iclR,A–3,5000,FALSE,non-mutator,ZDB409
+nadR,A–3,5000,FALSE,non-mutator,ZDB409
+ybaL,A–3,10000,TRUE,non-mutator,REL4538A
+topA,A–3,10000,TRUE,non-mutator,REL4538A
+pykF,A–3,10000,TRUE,non-mutator,REL4538A
+spoT,A–3,10000,FALSE,non-mutator,REL4538A
+yijC (fabR),A–3,10000,FALSE,non-mutator,REL4538A
+hslU,A–3,10000,TRUE,non-mutator,REL4538A
+iclR,A–3,10000,FALSE,non-mutator,REL4538A
+nadR,A–3,10000,FALSE,non-mutator,REL4538A
+ybaL,A–3,10000,TRUE,non-mutator,ZDB429
+topA,A–3,10000,TRUE,non-mutator,ZDB429
+pykF,A–3,10000,TRUE,non-mutator,ZDB429
+spoT,A–3,10000,FALSE,non-mutator,ZDB429
+yijC (fabR),A–3,10000,FALSE,non-mutator,ZDB429
+hslU,A–3,10000,TRUE,non-mutator,ZDB429
+iclR,A–3,10000,FALSE,non-mutator,ZDB429
+nadR,A–3,10000,FALSE,non-mutator,ZDB429
+ybaL,A–3,15000,TRUE,non-mutator,REL7179B
+topA,A–3,15000,TRUE,non-mutator,REL7179B
+pykF,A–3,15000,TRUE,non-mutator,REL7179B
+spoT,A–3,15000,FALSE,non-mutator,REL7179B
+yijC (fabR),A–3,15000,FALSE,non-mutator,REL7179B
+hslU,A–3,15000,TRUE,non-mutator,REL7179B
+iclR,A–3,15000,TRUE,non-mutator,REL7179B
+nadR,A–3,15000,TRUE,non-mutator,REL7179B
+ybaL,A–3,15000,TRUE,non-mutator,ZDB446
+topA,A–3,15000,TRUE,non-mutator,ZDB446
+pykF,A–3,15000,TRUE,non-mutator,ZDB446
+spoT,A–3,15000,FALSE,non-mutator,ZDB446
+yijC (fabR),A–3,15000,FALSE,non-mutator,ZDB446
+hslU,A–3,15000,TRUE,non-mutator,ZDB446
+iclR,A–3,15000,FALSE,non-mutator,ZDB446
+nadR,A–3,15000,FALSE,non-mutator,ZDB446
+ybaL,A–3,20000,TRUE,non-mutator,ZDB458
+topA,A–3,20000,TRUE,non-mutator,ZDB458
+pykF,A–3,20000,TRUE,non-mutator,ZDB458
+spoT,A–3,20000,FALSE,non-mutator,ZDB458
+yijC (fabR),A–3,20000,FALSE,non-mutator,ZDB458
+hslU,A–3,20000,TRUE,non-mutator,ZDB458
+iclR,A–3,20000,TRUE,non-mutator,ZDB458
+nadR,A–3,20000,TRUE,non-mutator,ZDB458
+ybaL,A–3,20000,TRUE,non-mutator,ZDB464
+topA,A–3,20000,TRUE,non-mutator,ZDB464
+pykF,A–3,20000,TRUE,non-mutator,ZDB464
+spoT,A–3,20000,FALSE,non-mutator,ZDB464
+yijC (fabR),A–3,20000,FALSE,non-mutator,ZDB464
+hslU,A–3,20000,TRUE,non-mutator,ZDB464
+iclR,A–3,20000,TRUE,non-mutator,ZDB464
+nadR,A–3,20000,TRUE,non-mutator,ZDB464
+ybaL,A–4,500,FALSE,non-mutator,REL765A
+topA,A–4,500,FALSE,non-mutator,REL765A
+pykF,A–4,500,TRUE,non-mutator,REL765A
+spoT,A–4,500,TRUE,non-mutator,REL765A
+yijC (fabR),A–4,500,FALSE,non-mutator,REL765A
+hslU,A–4,500,FALSE,non-mutator,REL765A
+iclR,A–4,500,FALSE,non-mutator,REL765A
+nadR,A–4,500,FALSE,non-mutator,REL765A
+ybaL,A–4,500,FALSE,non-mutator,REL765B
+topA,A–4,500,FALSE,non-mutator,REL765B
+pykF,A–4,500,TRUE,non-mutator,REL765B
+spoT,A–4,500,TRUE,non-mutator,REL765B
+yijC (fabR),A–4,500,FALSE,non-mutator,REL765B
+hslU,A–4,500,FALSE,non-mutator,REL765B
+iclR,A–4,500,FALSE,non-mutator,REL765B
+nadR,A–4,500,FALSE,non-mutator,REL765B
+ybaL,A–4,1000,FALSE,non-mutator,REL967A
+topA,A–4,1000,FALSE,non-mutator,REL967A
+pykF,A–4,1000,TRUE,non-mutator,REL967A
+spoT,A–4,1000,TRUE,non-mutator,REL967A
+yijC (fabR),A–4,1000,FALSE,non-mutator,REL967A
+hslU,A–4,1000,FALSE,non-mutator,REL967A
+iclR,A–4,1000,FALSE,non-mutator,REL967A
+nadR,A–4,1000,FALSE,non-mutator,REL967A
+ybaL,A–4,1000,FALSE,non-mutator,REL967B
+topA,A–4,1000,FALSE,non-mutator,REL967B
+pykF,A–4,1000,TRUE,non-mutator,REL967B
+spoT,A–4,1000,TRUE,non-mutator,REL967B
+yijC (fabR),A–4,1000,FALSE,non-mutator,REL967B
+hslU,A–4,1000,FALSE,non-mutator,REL967B
+iclR,A–4,1000,FALSE,non-mutator,REL967B
+nadR,A–4,1000,FALSE,non-mutator,REL967B
+ybaL,A–4,1500,FALSE,non-mutator,REL1071A
+topA,A–4,1500,FALSE,non-mutator,REL1071A
+pykF,A–4,1500,TRUE,non-mutator,REL1071A
+spoT,A–4,1500,TRUE,non-mutator,REL1071A
+yijC (fabR),A–4,1500,FALSE,non-mutator,REL1071A
+hslU,A–4,1500,FALSE,non-mutator,REL1071A
+iclR,A–4,1500,TRUE,non-mutator,REL1071A
+nadR,A–4,1500,FALSE,non-mutator,REL1071A
+ybaL,A–4,1500,FALSE,non-mutator,REL1071B
+topA,A–4,1500,FALSE,non-mutator,REL1071B
+pykF,A–4,1500,TRUE,non-mutator,REL1071B
+spoT,A–4,1500,TRUE,non-mutator,REL1071B
+yijC (fabR),A–4,1500,FALSE,non-mutator,REL1071B
+hslU,A–4,1500,FALSE,non-mutator,REL1071B
+iclR,A–4,1500,TRUE,non-mutator,REL1071B
+nadR,A–4,1500,FALSE,non-mutator,REL1071B
+ybaL,A–4,2000,FALSE,non-mutator,REL1167A
+topA,A–4,2000,FALSE,non-mutator,REL1167A
+pykF,A–4,2000,TRUE,non-mutator,REL1167A
+spoT,A–4,2000,TRUE,non-mutator,REL1167A
+yijC (fabR),A–4,2000,FALSE,non-mutator,REL1167A
+hslU,A–4,2000,FALSE,non-mutator,REL1167A
+iclR,A–4,2000,TRUE,non-mutator,REL1167A
+nadR,A–4,2000,FALSE,non-mutator,REL1167A
+ybaL,A–4,2000,FALSE,non-mutator,REL1167B
+topA,A–4,2000,FALSE,non-mutator,REL1167B
+pykF,A–4,2000,TRUE,non-mutator,REL1167B
+spoT,A–4,2000,TRUE,non-mutator,REL1167B
+yijC (fabR),A–4,2000,FALSE,non-mutator,REL1167B
+hslU,A–4,2000,FALSE,non-mutator,REL1167B
+iclR,A–4,2000,TRUE,non-mutator,REL1167B
+nadR,A–4,2000,FALSE,non-mutator,REL1167B
+ybaL,A–4,5000,FALSE,non-mutator,REL2182A
+topA,A–4,5000,FALSE,non-mutator,REL2182A
+pykF,A–4,5000,TRUE,non-mutator,REL2182A
+spoT,A–4,5000,TRUE,non-mutator,REL2182A
+yijC (fabR),A–4,5000,FALSE,non-mutator,REL2182A
+hslU,A–4,5000,FALSE,non-mutator,REL2182A
+iclR,A–4,5000,TRUE,non-mutator,REL2182A
+nadR,A–4,5000,FALSE,non-mutator,REL2182A
+ybaL,A–4,5000,FALSE,non-mutator,REL2182B
+topA,A–4,5000,FALSE,non-mutator,REL2182B
+pykF,A–4,5000,TRUE,non-mutator,REL2182B
+spoT,A–4,5000,TRUE,non-mutator,REL2182B
+yijC (fabR),A–4,5000,FALSE,non-mutator,REL2182B
+hslU,A–4,5000,FALSE,non-mutator,REL2182B
+iclR,A–4,5000,TRUE,non-mutator,REL2182B
+nadR,A–4,5000,FALSE,non-mutator,REL2182B
+ybaL,A–4,10000,TRUE,point-mutator,REL4539A
+topA,A–4,10000,FALSE,point-mutator,REL4539A
+pykF,A–4,10000,TRUE,point-mutator,REL4539A
+spoT,A–4,10000,TRUE,point-mutator,REL4539A
+yijC (fabR),A–4,10000,FALSE,point-mutator,REL4539A
+hslU,A–4,10000,FALSE,point-mutator,REL4539A
+iclR,A–4,10000,TRUE,point-mutator,REL4539A
+nadR,A–4,10000,TRUE,point-mutator,REL4539A
+ybaL,A–4,10000,TRUE,point-mutator,REL4539B
+topA,A–4,10000,FALSE,point-mutator,REL4539B
+pykF,A–4,10000,TRUE,point-mutator,REL4539B
+spoT,A–4,10000,TRUE,point-mutator,REL4539B
+yijC (fabR),A–4,10000,FALSE,point-mutator,REL4539B
+hslU,A–4,10000,FALSE,point-mutator,REL4539B
+iclR,A–4,10000,TRUE,point-mutator,REL4539B
+nadR,A–4,10000,TRUE,point-mutator,REL4539B
+ybaL,A–4,15000,TRUE,point-mutator,REL7180A
+topA,A–4,15000,FALSE,point-mutator,REL7180A
+pykF,A–4,15000,TRUE,point-mutator,REL7180A
+spoT,A–4,15000,TRUE,point-mutator,REL7180A
+yijC (fabR),A–4,15000,FALSE,point-mutator,REL7180A
+hslU,A–4,15000,FALSE,point-mutator,REL7180A
+iclR,A–4,15000,TRUE,point-mutator,REL7180A
+nadR,A–4,15000,TRUE,point-mutator,REL7180A
+ybaL,A–4,15000,TRUE,point-mutator,REL7180B
+topA,A–4,15000,FALSE,point-mutator,REL7180B
+pykF,A–4,15000,TRUE,point-mutator,REL7180B
+spoT,A–4,15000,TRUE,point-mutator,REL7180B
+yijC (fabR),A–4,15000,FALSE,point-mutator,REL7180B
+hslU,A–4,15000,FALSE,point-mutator,REL7180B
+iclR,A–4,15000,TRUE,point-mutator,REL7180B
+nadR,A–4,15000,TRUE,point-mutator,REL7180B
+ybaL,A–4,20000,TRUE,point-mutator,REL8596A
+topA,A–4,20000,FALSE,point-mutator,REL8596A
+pykF,A–4,20000,TRUE,point-mutator,REL8596A
+spoT,A–4,20000,TRUE,point-mutator,REL8596A
+yijC (fabR),A–4,20000,FALSE,point-mutator,REL8596A
+hslU,A–4,20000,FALSE,point-mutator,REL8596A
+iclR,A–4,20000,TRUE,point-mutator,REL8596A
+nadR,A–4,20000,TRUE,point-mutator,REL8596A
+ybaL,A–4,20000,TRUE,point-mutator,REL8596B
+topA,A–4,20000,FALSE,point-mutator,REL8596B
+pykF,A–4,20000,TRUE,point-mutator,REL8596B
+spoT,A–4,20000,TRUE,point-mutator,REL8596B
+yijC (fabR),A–4,20000,FALSE,point-mutator,REL8596B
+hslU,A–4,20000,FALSE,point-mutator,REL8596B
+iclR,A–4,20000,TRUE,point-mutator,REL8596B
+nadR,A–4,20000,TRUE,point-mutator,REL8596B
+ybaL,A–5,500,FALSE,point-mutator,REL766A
+topA,A–5,500,TRUE,point-mutator,REL766A
+pykF,A–5,500,FALSE,point-mutator,REL766A
+spoT,A–5,500,FALSE,point-mutator,REL766A
+yijC (fabR),A–5,500,FALSE,point-mutator,REL766A
+hslU,A–5,500,FALSE,point-mutator,REL766A
+iclR,A–5,500,FALSE,point-mutator,REL766A
+nadR,A–5,500,FALSE,point-mutator,REL766A
+ybaL,A–5,500,FALSE,point-mutator,REL766B
+topA,A–5,500,TRUE,point-mutator,REL766B
+pykF,A–5,500,FALSE,point-mutator,REL766B
+spoT,A–5,500,FALSE,point-mutator,REL766B
+yijC (fabR),A–5,500,FALSE,point-mutator,REL766B
+hslU,A–5,500,FALSE,point-mutator,REL766B
+iclR,A–5,500,FALSE,point-mutator,REL766B
+nadR,A–5,500,FALSE,point-mutator,REL766B
+ybaL,A–5,1000,FALSE,point-mutator,REL968A
+topA,A–5,1000,TRUE,point-mutator,REL968A
+pykF,A–5,1000,FALSE,point-mutator,REL968A
+spoT,A–5,1000,FALSE,point-mutator,REL968A
+yijC (fabR),A–5,1000,FALSE,point-mutator,REL968A
+hslU,A–5,1000,FALSE,point-mutator,REL968A
+iclR,A–5,1000,FALSE,point-mutator,REL968A
+nadR,A–5,1000,FALSE,point-mutator,REL968A
+ybaL,A–5,1000,FALSE,point-mutator,REL968B
+topA,A–5,1000,TRUE,point-mutator,REL968B
+pykF,A–5,1000,FALSE,point-mutator,REL968B
+spoT,A–5,1000,FALSE,point-mutator,REL968B
+yijC (fabR),A–5,1000,FALSE,point-mutator,REL968B
+hslU,A–5,1000,FALSE,point-mutator,REL968B
+iclR,A–5,1000,FALSE,point-mutator,REL968B
+nadR,A–5,1000,FALSE,point-mutator,REL968B
+ybaL,A–5,1500,FALSE,point-mutator,REL1072A
+topA,A–5,1500,TRUE,point-mutator,REL1072A
+pykF,A–5,1500,TRUE,point-mutator,REL1072A
+spoT,A–5,1500,FALSE,point-mutator,REL1072A
+yijC (fabR),A–5,1500,FALSE,point-mutator,REL1072A
+hslU,A–5,1500,FALSE,point-mutator,REL1072A
+iclR,A–5,1500,FALSE,point-mutator,REL1072A
+nadR,A–5,1500,FALSE,point-mutator,REL1072A
+ybaL,A–5,1500,FALSE,point-mutator,REL1072B
+topA,A–5,1500,TRUE,point-mutator,REL1072B
+pykF,A–5,1500,TRUE,point-mutator,REL1072B
+spoT,A–5,1500,FALSE,point-mutator,REL1072B
+yijC (fabR),A–5,1500,FALSE,point-mutator,REL1072B
+hslU,A–5,1500,TRUE,point-mutator,REL1072B
+iclR,A–5,1500,FALSE,point-mutator,REL1072B
+nadR,A–5,1500,FALSE,point-mutator,REL1072B
+ybaL,A–5,2000,FALSE,point-mutator,REL1168A
+topA,A–5,2000,TRUE,point-mutator,REL1168A
+pykF,A–5,2000,TRUE,point-mutator,REL1168A
+spoT,A–5,2000,FALSE,point-mutator,REL1168A
+yijC (fabR),A–5,2000,FALSE,point-mutator,REL1168A
+hslU,A–5,2000,TRUE,point-mutator,REL1168A
+iclR,A–5,2000,FALSE,point-mutator,REL1168A
+nadR,A–5,2000,FALSE,point-mutator,REL1168A
+ybaL,A–5,2000,FALSE,point-mutator,REL1168B
+topA,A–5,2000,TRUE,point-mutator,REL1168B
+pykF,A–5,2000,TRUE,point-mutator,REL1168B
+spoT,A–5,2000,FALSE,point-mutator,REL1168B
+yijC (fabR),A–5,2000,FALSE,point-mutator,REL1168B
+hslU,A–5,2000,TRUE,point-mutator,REL1168B
+iclR,A–5,2000,FALSE,point-mutator,REL1168B
+nadR,A–5,2000,FALSE,point-mutator,REL1168B
+ybaL,A–5,5000,FALSE,point-mutator,REL2183A
+topA,A–5,5000,TRUE,point-mutator,REL2183A
+pykF,A–5,5000,TRUE,point-mutator,REL2183A
+spoT,A–5,5000,FALSE,point-mutator,REL2183A
+yijC (fabR),A–5,5000,FALSE,point-mutator,REL2183A
+hslU,A–5,5000,TRUE,point-mutator,REL2183A
+iclR,A–5,5000,TRUE,point-mutator,REL2183A
+nadR,A–5,5000,FALSE,point-mutator,REL2183A
+ybaL,A–5,5000,FALSE,point-mutator,REL2183B
+topA,A–5,5000,TRUE,point-mutator,REL2183B
+pykF,A–5,5000,TRUE,point-mutator,REL2183B
+spoT,A–5,5000,FALSE,point-mutator,REL2183B
+yijC (fabR),A–5,5000,FALSE,point-mutator,REL2183B
+hslU,A–5,5000,TRUE,point-mutator,REL2183B
+iclR,A–5,5000,TRUE,point-mutator,REL2183B
+nadR,A–5,5000,FALSE,point-mutator,REL2183B
+ybaL,A–5,10000,TRUE,point-mutator,REL4540A
+topA,A–5,10000,TRUE,point-mutator,REL4540A
+pykF,A–5,10000,TRUE,point-mutator,REL4540A
+spoT,A–5,10000,FALSE,point-mutator,REL4540A
+yijC (fabR),A–5,10000,FALSE,point-mutator,REL4540A
+hslU,A–5,10000,TRUE,point-mutator,REL4540A
+iclR,A–5,10000,TRUE,point-mutator,REL4540A
+nadR,A–5,10000,FALSE,point-mutator,REL4540A
+ybaL,A–5,10000,FALSE,point-mutator,REL4540B
+topA,A–5,10000,TRUE,point-mutator,REL4540B
+pykF,A–5,10000,TRUE,point-mutator,REL4540B
+spoT,A–5,10000,FALSE,point-mutator,REL4540B
+yijC (fabR),A–5,10000,FALSE,point-mutator,REL4540B
+hslU,A–5,10000,TRUE,point-mutator,REL4540B
+iclR,A–5,10000,TRUE,point-mutator,REL4540B
+nadR,A–5,10000,FALSE,point-mutator,REL4540B
+ybaL,A–5,15000,TRUE,point-mutator,REL7181A
+topA,A–5,15000,TRUE,point-mutator,REL7181A
+pykF,A–5,15000,TRUE,point-mutator,REL7181A
+spoT,A–5,15000,FALSE,point-mutator,REL7181A
+yijC (fabR),A–5,15000,FALSE,point-mutator,REL7181A
+hslU,A–5,15000,TRUE,point-mutator,REL7181A
+iclR,A–5,15000,TRUE,point-mutator,REL7181A
+nadR,A–5,15000,FALSE,point-mutator,REL7181A
+ybaL,A–5,15000,TRUE,point-mutator,REL7181B
+topA,A–5,15000,TRUE,point-mutator,REL7181B
+pykF,A–5,15000,TRUE,point-mutator,REL7181B
+spoT,A–5,15000,FALSE,point-mutator,REL7181B
+yijC (fabR),A–5,15000,FALSE,point-mutator,REL7181B
+hslU,A–5,15000,TRUE,point-mutator,REL7181B
+iclR,A–5,15000,TRUE,point-mutator,REL7181B
+nadR,A–5,15000,FALSE,point-mutator,REL7181B
+ybaL,A–5,20000,TRUE,point-mutator,REL8597A
+topA,A–5,20000,TRUE,point-mutator,REL8597A
+pykF,A–5,20000,TRUE,point-mutator,REL8597A
+spoT,A–5,20000,FALSE,point-mutator,REL8597A
+yijC (fabR),A–5,20000,FALSE,point-mutator,REL8597A
+hslU,A–5,20000,TRUE,point-mutator,REL8597A
+iclR,A–5,20000,TRUE,point-mutator,REL8597A
+nadR,A–5,20000,TRUE,point-mutator,REL8597A
+ybaL,A–5,20000,TRUE,point-mutator,REL8597B
+topA,A–5,20000,TRUE,point-mutator,REL8597B
+pykF,A–5,20000,TRUE,point-mutator,REL8597B
+spoT,A–5,20000,FALSE,point-mutator,REL8597B
+yijC (fabR),A–5,20000,FALSE,point-mutator,REL8597B
+hslU,A–5,20000,TRUE,point-mutator,REL8597B
+iclR,A–5,20000,TRUE,point-mutator,REL8597B
+nadR,A–5,20000,TRUE,point-mutator,REL8597B
+ybaL,A–6,500,FALSE,non-mutator,REL767A
+topA,A–6,500,TRUE,non-mutator,REL767A
+pykF,A–6,500,FALSE,non-mutator,REL767A
+spoT,A–6,500,FALSE,non-mutator,REL767A
+yijC (fabR),A–6,500,FALSE,non-mutator,REL767A
+hslU,A–6,500,FALSE,non-mutator,REL767A
+iclR,A–6,500,FALSE,non-mutator,REL767A
+nadR,A–6,500,FALSE,non-mutator,REL767A
+ybaL,A–6,500,FALSE,non-mutator,REL767B
+topA,A–6,500,FALSE,non-mutator,REL767B
+pykF,A–6,500,FALSE,non-mutator,REL767B
+spoT,A–6,500,FALSE,non-mutator,REL767B
+yijC (fabR),A–6,500,FALSE,non-mutator,REL767B
+hslU,A–6,500,FALSE,non-mutator,REL767B
+iclR,A–6,500,FALSE,non-mutator,REL767B
+nadR,A–6,500,FALSE,non-mutator,REL767B
+ybaL,A–6,1000,FALSE,non-mutator,REL969A
+topA,A–6,1000,FALSE,non-mutator,REL969A
+pykF,A–6,1000,TRUE,non-mutator,REL969A
+spoT,A–6,1000,FALSE,non-mutator,REL969A
+yijC (fabR),A–6,1000,FALSE,non-mutator,REL969A
+hslU,A–6,1000,FALSE,non-mutator,REL969A
+iclR,A–6,1000,FALSE,non-mutator,REL969A
+nadR,A–6,1000,TRUE,non-mutator,REL969A
+ybaL,A–6,1000,FALSE,non-mutator,REL969B
+topA,A–6,1000,FALSE,non-mutator,REL969B
+pykF,A–6,1000,TRUE,non-mutator,REL969B
+spoT,A–6,1000,FALSE,non-mutator,REL969B
+yijC (fabR),A–6,1000,FALSE,non-mutator,REL969B
+hslU,A–6,1000,FALSE,non-mutator,REL969B
+iclR,A–6,1000,FALSE,non-mutator,REL969B
+nadR,A–6,1000,TRUE,non-mutator,REL969B
+ybaL,A–6,1500,FALSE,non-mutator,REL1073A
+topA,A–6,1500,FALSE,non-mutator,REL1073A
+pykF,A–6,1500,TRUE,non-mutator,REL1073A
+spoT,A–6,1500,FALSE,non-mutator,REL1073A
+yijC (fabR),A–6,1500,FALSE,non-mutator,REL1073A
+hslU,A–6,1500,FALSE,non-mutator,REL1073A
+iclR,A–6,1500,FALSE,non-mutator,REL1073A
+nadR,A–6,1500,TRUE,non-mutator,REL1073A
+ybaL,A–6,1500,FALSE,non-mutator,REL1073B
+topA,A–6,1500,FALSE,non-mutator,REL1073B
+pykF,A–6,1500,TRUE,non-mutator,REL1073B
+spoT,A–6,1500,FALSE,non-mutator,REL1073B
+yijC (fabR),A–6,1500,FALSE,non-mutator,REL1073B
+hslU,A–6,1500,FALSE,non-mutator,REL1073B
+iclR,A–6,1500,FALSE,non-mutator,REL1073B
+nadR,A–6,1500,TRUE,non-mutator,REL1073B
+ybaL,A–6,2000,FALSE,non-mutator,REL1169A
+topA,A–6,2000,FALSE,non-mutator,REL1169A
+pykF,A–6,2000,TRUE,non-mutator,REL1169A
+spoT,A–6,2000,FALSE,non-mutator,REL1169A
+yijC (fabR),A–6,2000,TRUE,non-mutator,REL1169A
+hslU,A–6,2000,FALSE,non-mutator,REL1169A
+iclR,A–6,2000,FALSE,non-mutator,REL1169A
+nadR,A–6,2000,TRUE,non-mutator,REL1169A
+ybaL,A–6,2000,FALSE,non-mutator,REL1169B
+topA,A–6,2000,FALSE,non-mutator,REL1169B
+pykF,A–6,2000,TRUE,non-mutator,REL1169B
+spoT,A–6,2000,FALSE,non-mutator,REL1169B
+yijC (fabR),A–6,2000,TRUE,non-mutator,REL1169B
+hslU,A–6,2000,FALSE,non-mutator,REL1169B
+iclR,A–6,2000,FALSE,non-mutator,REL1169B
+nadR,A–6,2000,TRUE,non-mutator,REL1169B
+ybaL,A–6,5000,FALSE,non-mutator,REL2184A
+topA,A–6,5000,FALSE,non-mutator,REL2184A
+pykF,A–6,5000,TRUE,non-mutator,REL2184A
+spoT,A–6,5000,FALSE,non-mutator,REL2184A
+yijC (fabR),A–6,5000,FALSE,non-mutator,REL2184A
+hslU,A–6,5000,TRUE,non-mutator,REL2184A
+iclR,A–6,5000,FALSE,non-mutator,REL2184A
+nadR,A–6,5000,TRUE,non-mutator,REL2184A
+ybaL,A–6,5000,FALSE,non-mutator,REL2184B
+topA,A–6,5000,FALSE,non-mutator,REL2184B
+pykF,A–6,5000,TRUE,non-mutator,REL2184B
+spoT,A–6,5000,FALSE,non-mutator,REL2184B
+yijC (fabR),A–6,5000,FALSE,non-mutator,REL2184B
+hslU,A–6,5000,TRUE,non-mutator,REL2184B
+iclR,A–6,5000,FALSE,non-mutator,REL2184B
+nadR,A–6,5000,TRUE,non-mutator,REL2184B
+ybaL,A–6,10000,FALSE,non-mutator,REL4541A
+topA,A–6,10000,TRUE,non-mutator,REL4541A
+pykF,A–6,10000,TRUE,non-mutator,REL4541A
+spoT,A–6,10000,TRUE,non-mutator,REL4541A
+yijC (fabR),A–6,10000,FALSE,non-mutator,REL4541A
+hslU,A–6,10000,TRUE,non-mutator,REL4541A
+iclR,A–6,10000,FALSE,non-mutator,REL4541A
+nadR,A–6,10000,TRUE,non-mutator,REL4541A
+ybaL,A–6,10000,FALSE,non-mutator,REL4541B
+topA,A–6,10000,FALSE,non-mutator,REL4541B
+pykF,A–6,10000,TRUE,non-mutator,REL4541B
+spoT,A–6,10000,TRUE,non-mutator,REL4541B
+yijC (fabR),A–6,10000,FALSE,non-mutator,REL4541B
+hslU,A–6,10000,TRUE,non-mutator,REL4541B
+iclR,A–6,10000,FALSE,non-mutator,REL4541B
+nadR,A–6,10000,TRUE,non-mutator,REL4541B
+ybaL,A–6,15000,FALSE,non-mutator,REL7182A
+topA,A–6,15000,FALSE,non-mutator,REL7182A
+pykF,A–6,15000,TRUE,non-mutator,REL7182A
+spoT,A–6,15000,TRUE,non-mutator,REL7182A
+yijC (fabR),A–6,15000,FALSE,non-mutator,REL7182A
+hslU,A–6,15000,TRUE,non-mutator,REL7182A
+iclR,A–6,15000,FALSE,non-mutator,REL7182A
+nadR,A–6,15000,TRUE,non-mutator,REL7182A
+ybaL,A–6,15000,FALSE,non-mutator,REL7182B
+topA,A–6,15000,FALSE,non-mutator,REL7182B
+pykF,A–6,15000,TRUE,non-mutator,REL7182B
+spoT,A–6,15000,TRUE,non-mutator,REL7182B
+yijC (fabR),A–6,15000,FALSE,non-mutator,REL7182B
+hslU,A–6,15000,TRUE,non-mutator,REL7182B
+iclR,A–6,15000,FALSE,non-mutator,REL7182B
+nadR,A–6,15000,TRUE,non-mutator,REL7182B
+ybaL,A–6,20000,FALSE,non-mutator,REL8598A
+topA,A–6,20000,FALSE,non-mutator,REL8598A
+pykF,A–6,20000,TRUE,non-mutator,REL8598A
+spoT,A–6,20000,TRUE,non-mutator,REL8598A
+yijC (fabR),A–6,20000,FALSE,non-mutator,REL8598A
+hslU,A–6,20000,TRUE,non-mutator,REL8598A
+iclR,A–6,20000,FALSE,non-mutator,REL8598A
+nadR,A–6,20000,TRUE,non-mutator,REL8598A
+ybaL,A–6,20000,FALSE,non-mutator,REL8598B
+topA,A–6,20000,FALSE,non-mutator,REL8598B
+pykF,A–6,20000,TRUE,non-mutator,REL8598B
+spoT,A–6,20000,TRUE,non-mutator,REL8598B
+yijC (fabR),A–6,20000,FALSE,non-mutator,REL8598B
+hslU,A–6,20000,TRUE,non-mutator,REL8598B
+iclR,A–6,20000,FALSE,non-mutator,REL8598B
+nadR,A–6,20000,TRUE,non-mutator,REL8598B
+ybaL,A+1,500,FALSE,non-mutator,REL768A
+topA,A+1,500,TRUE,non-mutator,REL768A
+pykF,A+1,500,FALSE,non-mutator,REL768A
+spoT,A+1,500,FALSE,non-mutator,REL768A
+yijC (fabR),A+1,500,FALSE,non-mutator,REL768A
+hslU,A+1,500,FALSE,non-mutator,REL768A
+iclR,A+1,500,FALSE,non-mutator,REL768A
+nadR,A+1,500,FALSE,non-mutator,REL768A
+ybaL,A+1,500,FALSE,non-mutator,REL768B
+topA,A+1,500,TRUE,non-mutator,REL768B
+pykF,A+1,500,FALSE,non-mutator,REL768B
+spoT,A+1,500,FALSE,non-mutator,REL768B
+yijC (fabR),A+1,500,FALSE,non-mutator,REL768B
+hslU,A+1,500,FALSE,non-mutator,REL768B
+iclR,A+1,500,FALSE,non-mutator,REL768B
+nadR,A+1,500,FALSE,non-mutator,REL768B
+ybaL,A+1,1000,FALSE,non-mutator,REL958A
+topA,A+1,1000,TRUE,non-mutator,REL958A
+pykF,A+1,1000,FALSE,non-mutator,REL958A
+spoT,A+1,1000,FALSE,non-mutator,REL958A
+yijC (fabR),A+1,1000,TRUE,non-mutator,REL958A
+hslU,A+1,1000,FALSE,non-mutator,REL958A
+iclR,A+1,1000,FALSE,non-mutator,REL958A
+nadR,A+1,1000,FALSE,non-mutator,REL958A
+ybaL,A+1,1000,FALSE,non-mutator,REL958B
+topA,A+1,1000,FALSE,non-mutator,REL958B
+pykF,A+1,1000,FALSE,non-mutator,REL958B
+spoT,A+1,1000,FALSE,non-mutator,REL958B
+yijC (fabR),A+1,1000,TRUE,non-mutator,REL958B
+hslU,A+1,1000,FALSE,non-mutator,REL958B
+iclR,A+1,1000,FALSE,non-mutator,REL958B
+nadR,A+1,1000,FALSE,non-mutator,REL958B
+ybaL,A+1,1500,FALSE,non-mutator,REL1062A
+topA,A+1,1500,TRUE,non-mutator,REL1062A
+pykF,A+1,1500,FALSE,non-mutator,REL1062A
+spoT,A+1,1500,FALSE,non-mutator,REL1062A
+yijC (fabR),A+1,1500,TRUE,non-mutator,REL1062A
+hslU,A+1,1500,FALSE,non-mutator,REL1062A
+iclR,A+1,1500,FALSE,non-mutator,REL1062A
+nadR,A+1,1500,TRUE,non-mutator,REL1062A
+ybaL,A+1,1500,FALSE,non-mutator,REL1062B
+topA,A+1,1500,TRUE,non-mutator,REL1062B
+pykF,A+1,1500,FALSE,non-mutator,REL1062B
+spoT,A+1,1500,FALSE,non-mutator,REL1062B
+yijC (fabR),A+1,1500,FALSE,non-mutator,REL1062B
+hslU,A+1,1500,FALSE,non-mutator,REL1062B
+iclR,A+1,1500,FALSE,non-mutator,REL1062B
+nadR,A+1,1500,TRUE,non-mutator,REL1062B
+ybaL,A+1,2000,FALSE,non-mutator,REL1158A
+topA,A+1,2000,FALSE,non-mutator,REL1158A
+pykF,A+1,2000,TRUE,non-mutator,REL1158A
+spoT,A+1,2000,TRUE,non-mutator,REL1158A
+yijC (fabR),A+1,2000,FALSE,non-mutator,REL1158A
+hslU,A+1,2000,FALSE,non-mutator,REL1158A
+iclR,A+1,2000,FALSE,non-mutator,REL1158A
+nadR,A+1,2000,TRUE,non-mutator,REL1158A
+ybaL,A+1,2000,FALSE,non-mutator,REL1158C
+topA,A+1,2000,FALSE,non-mutator,REL1158C
+pykF,A+1,2000,TRUE,non-mutator,REL1158C
+spoT,A+1,2000,FALSE,non-mutator,REL1158C
+yijC (fabR),A+1,2000,FALSE,non-mutator,REL1158C
+hslU,A+1,2000,FALSE,non-mutator,REL1158C
+iclR,A+1,2000,FALSE,non-mutator,REL1158C
+nadR,A+1,2000,TRUE,non-mutator,REL1158C
+ybaL,A+1,5000,FALSE,IS-mutator,REL2173A
+topA,A+1,5000,FALSE,IS-mutator,REL2173A
+pykF,A+1,5000,TRUE,IS-mutator,REL2173A
+spoT,A+1,5000,FALSE,IS-mutator,REL2173A
+yijC (fabR),A+1,5000,FALSE,IS-mutator,REL2173A
+hslU,A+1,5000,TRUE,IS-mutator,REL2173A
+iclR,A+1,5000,FALSE,IS-mutator,REL2173A
+nadR,A+1,5000,TRUE,IS-mutator,REL2173A
+ybaL,A+1,5000,FALSE,IS-mutator,REL2173B
+topA,A+1,5000,FALSE,IS-mutator,REL2173B
+pykF,A+1,5000,TRUE,IS-mutator,REL2173B
+spoT,A+1,5000,FALSE,IS-mutator,REL2173B
+yijC (fabR),A+1,5000,FALSE,IS-mutator,REL2173B
+hslU,A+1,5000,TRUE,IS-mutator,REL2173B
+iclR,A+1,5000,FALSE,IS-mutator,REL2173B
+nadR,A+1,5000,TRUE,IS-mutator,REL2173B
+ybaL,A+1,10000,FALSE,IS-mutator,REL4530A
+topA,A+1,10000,FALSE,IS-mutator,REL4530A
+pykF,A+1,10000,TRUE,IS-mutator,REL4530A
+spoT,A+1,10000,FALSE,IS-mutator,REL4530A
+yijC (fabR),A+1,10000,FALSE,IS-mutator,REL4530A
+hslU,A+1,10000,TRUE,IS-mutator,REL4530A
+iclR,A+1,10000,TRUE,IS-mutator,REL4530A
+nadR,A+1,10000,TRUE,IS-mutator,REL4530A
+ybaL,A+1,10000,FALSE,IS-mutator,REL4530B
+topA,A+1,10000,FALSE,IS-mutator,REL4530B
+pykF,A+1,10000,TRUE,IS-mutator,REL4530B
+spoT,A+1,10000,FALSE,IS-mutator,REL4530B
+yijC (fabR),A+1,10000,FALSE,IS-mutator,REL4530B
+hslU,A+1,10000,TRUE,IS-mutator,REL4530B
+iclR,A+1,10000,FALSE,IS-mutator,REL4530B
+nadR,A+1,10000,TRUE,IS-mutator,REL4530B
+ybaL,A+1,15000,FALSE,IS-mutator,REL7183A
+topA,A+1,15000,FALSE,IS-mutator,REL7183A
+pykF,A+1,15000,TRUE,IS-mutator,REL7183A
+spoT,A+1,15000,FALSE,IS-mutator,REL7183A
+yijC (fabR),A+1,15000,FALSE,IS-mutator,REL7183A
+hslU,A+1,15000,TRUE,IS-mutator,REL7183A
+iclR,A+1,15000,TRUE,IS-mutator,REL7183A
+nadR,A+1,15000,TRUE,IS-mutator,REL7183A
+ybaL,A+1,15000,FALSE,IS-mutator,REL7183B
+topA,A+1,15000,FALSE,IS-mutator,REL7183B
+pykF,A+1,15000,TRUE,IS-mutator,REL7183B
+spoT,A+1,15000,FALSE,IS-mutator,REL7183B
+yijC (fabR),A+1,15000,FALSE,IS-mutator,REL7183B
+hslU,A+1,15000,TRUE,IS-mutator,REL7183B
+iclR,A+1,15000,TRUE,IS-mutator,REL7183B
+nadR,A+1,15000,TRUE,IS-mutator,REL7183B
+ybaL,A+1,20000,FALSE,IS-mutator,REL9282A
+topA,A+1,20000,FALSE,IS-mutator,REL9282A
+pykF,A+1,20000,TRUE,IS-mutator,REL9282A
+spoT,A+1,20000,FALSE,IS-mutator,REL9282A
+yijC (fabR),A+1,20000,FALSE,IS-mutator,REL9282A
+hslU,A+1,20000,TRUE,IS-mutator,REL9282A
+iclR,A+1,20000,TRUE,IS-mutator,REL9282A
+nadR,A+1,20000,TRUE,IS-mutator,REL9282A
+ybaL,A+1,20000,FALSE,IS-mutator,REL9282B
+topA,A+1,20000,FALSE,IS-mutator,REL9282B
+pykF,A+1,20000,TRUE,IS-mutator,REL9282B
+spoT,A+1,20000,FALSE,IS-mutator,REL9282B
+yijC (fabR),A+1,20000,FALSE,IS-mutator,REL9282B
+hslU,A+1,20000,TRUE,IS-mutator,REL9282B
+iclR,A+1,20000,TRUE,IS-mutator,REL9282B
+nadR,A+1,20000,TRUE,IS-mutator,REL9282B
+ybaL,A+2,500,FALSE,non-mutator,REL769A
+topA,A+2,500,FALSE,non-mutator,REL769A
+pykF,A+2,500,TRUE,non-mutator,REL769A
+spoT,A+2,500,TRUE,non-mutator,REL769A
+yijC (fabR),A+2,500,FALSE,non-mutator,REL769A
+hslU,A+2,500,FALSE,non-mutator,REL769A
+iclR,A+2,500,FALSE,non-mutator,REL769A
+nadR,A+2,500,FALSE,non-mutator,REL769A
+ybaL,A+2,500,FALSE,non-mutator,REL769B
+topA,A+2,500,FALSE,non-mutator,REL769B
+pykF,A+2,500,TRUE,non-mutator,REL769B
+spoT,A+2,500,TRUE,non-mutator,REL769B
+yijC (fabR),A+2,500,FALSE,non-mutator,REL769B
+hslU,A+2,500,FALSE,non-mutator,REL769B
+iclR,A+2,500,FALSE,non-mutator,REL769B
+nadR,A+2,500,FALSE,non-mutator,REL769B
+ybaL,A+2,1000,FALSE,non-mutator,REL959A
+topA,A+2,1000,FALSE,non-mutator,REL959A
+pykF,A+2,1000,TRUE,non-mutator,REL959A
+spoT,A+2,1000,TRUE,non-mutator,REL959A
+yijC (fabR),A+2,1000,FALSE,non-mutator,REL959A
+hslU,A+2,1000,FALSE,non-mutator,REL959A
+iclR,A+2,1000,FALSE,non-mutator,REL959A
+nadR,A+2,1000,FALSE,non-mutator,REL959A
+ybaL,A+2,1000,FALSE,non-mutator,REL959B
+topA,A+2,1000,FALSE,non-mutator,REL959B
+pykF,A+2,1000,TRUE,non-mutator,REL959B
+spoT,A+2,1000,TRUE,non-mutator,REL959B
+yijC (fabR),A+2,1000,FALSE,non-mutator,REL959B
+hslU,A+2,1000,FALSE,non-mutator,REL959B
+iclR,A+2,1000,FALSE,non-mutator,REL959B
+nadR,A+2,1000,FALSE,non-mutator,REL959B
+ybaL,A+2,1500,FALSE,non-mutator,REL1063A
+topA,A+2,1500,FALSE,non-mutator,REL1063A
+pykF,A+2,1500,TRUE,non-mutator,REL1063A
+spoT,A+2,1500,TRUE,non-mutator,REL1063A
+yijC (fabR),A+2,1500,FALSE,non-mutator,REL1063A
+hslU,A+2,1500,FALSE,non-mutator,REL1063A
+iclR,A+2,1500,FALSE,non-mutator,REL1063A
+nadR,A+2,1500,FALSE,non-mutator,REL1063A
+ybaL,A+2,1500,FALSE,non-mutator,REL1063B
+topA,A+2,1500,FALSE,non-mutator,REL1063B
+pykF,A+2,1500,TRUE,non-mutator,REL1063B
+spoT,A+2,1500,TRUE,non-mutator,REL1063B
+yijC (fabR),A+2,1500,FALSE,non-mutator,REL1063B
+hslU,A+2,1500,FALSE,non-mutator,REL1063B
+iclR,A+2,1500,FALSE,non-mutator,REL1063B
+nadR,A+2,1500,FALSE,non-mutator,REL1063B
+ybaL,A+2,2000,FALSE,non-mutator,REL1159A
+topA,A+2,2000,FALSE,non-mutator,REL1159A
+pykF,A+2,2000,TRUE,non-mutator,REL1159A
+spoT,A+2,2000,TRUE,non-mutator,REL1159A
+yijC (fabR),A+2,2000,FALSE,non-mutator,REL1159A
+hslU,A+2,2000,FALSE,non-mutator,REL1159A
+iclR,A+2,2000,FALSE,non-mutator,REL1159A
+nadR,A+2,2000,FALSE,non-mutator,REL1159A
+ybaL,A+2,2000,FALSE,non-mutator,REL1159B
+topA,A+2,2000,FALSE,non-mutator,REL1159B
+pykF,A+2,2000,TRUE,non-mutator,REL1159B
+spoT,A+2,2000,TRUE,non-mutator,REL1159B
+yijC (fabR),A+2,2000,FALSE,non-mutator,REL1159B
+hslU,A+2,2000,FALSE,non-mutator,REL1159B
+iclR,A+2,2000,FALSE,non-mutator,REL1159B
+nadR,A+2,2000,FALSE,non-mutator,REL1159B
+ybaL,A+2,5000,FALSE,non-mutator,REL2174A
+topA,A+2,5000,FALSE,non-mutator,REL2174A
+pykF,A+2,5000,TRUE,non-mutator,REL2174A
+spoT,A+2,5000,TRUE,non-mutator,REL2174A
+yijC (fabR),A+2,5000,FALSE,non-mutator,REL2174A
+hslU,A+2,5000,TRUE,non-mutator,REL2174A
+iclR,A+2,5000,FALSE,non-mutator,REL2174A
+nadR,A+2,5000,FALSE,non-mutator,REL2174A
+ybaL,A+2,5000,FALSE,non-mutator,REL2174B
+topA,A+2,5000,FALSE,non-mutator,REL2174B
+pykF,A+2,5000,TRUE,non-mutator,REL2174B
+spoT,A+2,5000,TRUE,non-mutator,REL2174B
+yijC (fabR),A+2,5000,FALSE,non-mutator,REL2174B
+hslU,A+2,5000,TRUE,non-mutator,REL2174B
+iclR,A+2,5000,FALSE,non-mutator,REL2174B
+nadR,A+2,5000,FALSE,non-mutator,REL2174B
+ybaL,A+2,10000,TRUE,non-mutator,REL4531A
+topA,A+2,10000,FALSE,non-mutator,REL4531A
+pykF,A+2,10000,TRUE,non-mutator,REL4531A
+spoT,A+2,10000,TRUE,non-mutator,REL4531A
+yijC (fabR),A+2,10000,FALSE,non-mutator,REL4531A
+hslU,A+2,10000,TRUE,non-mutator,REL4531A
+iclR,A+2,10000,TRUE,non-mutator,REL4531A
+nadR,A+2,10000,TRUE,non-mutator,REL4531A
+ybaL,A+2,10000,TRUE,non-mutator,REL4531B
+topA,A+2,10000,FALSE,non-mutator,REL4531B
+pykF,A+2,10000,TRUE,non-mutator,REL4531B
+spoT,A+2,10000,TRUE,non-mutator,REL4531B
+yijC (fabR),A+2,10000,FALSE,non-mutator,REL4531B
+hslU,A+2,10000,TRUE,non-mutator,REL4531B
+iclR,A+2,10000,TRUE,non-mutator,REL4531B
+nadR,A+2,10000,TRUE,non-mutator,REL4531B
+ybaL,A+2,15000,TRUE,non-mutator,REL7184A
+topA,A+2,15000,FALSE,non-mutator,REL7184A
+pykF,A+2,15000,TRUE,non-mutator,REL7184A
+spoT,A+2,15000,TRUE,non-mutator,REL7184A
+yijC (fabR),A+2,15000,FALSE,non-mutator,REL7184A
+hslU,A+2,15000,TRUE,non-mutator,REL7184A
+iclR,A+2,15000,TRUE,non-mutator,REL7184A
+nadR,A+2,15000,TRUE,non-mutator,REL7184A
+ybaL,A+2,15000,TRUE,non-mutator,REL7184B
+topA,A+2,15000,FALSE,non-mutator,REL7184B
+pykF,A+2,15000,TRUE,non-mutator,REL7184B
+spoT,A+2,15000,TRUE,non-mutator,REL7184B
+yijC (fabR),A+2,15000,FALSE,non-mutator,REL7184B
+hslU,A+2,15000,TRUE,non-mutator,REL7184B
+iclR,A+2,15000,TRUE,non-mutator,REL7184B
+nadR,A+2,15000,TRUE,non-mutator,REL7184B
+ybaL,A+2,20000,TRUE,non-mutator,REL8601A
+topA,A+2,20000,FALSE,non-mutator,REL8601A
+pykF,A+2,20000,TRUE,non-mutator,REL8601A
+spoT,A+2,20000,TRUE,non-mutator,REL8601A
+yijC (fabR),A+2,20000,FALSE,non-mutator,REL8601A
+hslU,A+2,20000,TRUE,non-mutator,REL8601A
+iclR,A+2,20000,TRUE,non-mutator,REL8601A
+nadR,A+2,20000,TRUE,non-mutator,REL8601A
+ybaL,A+2,20000,TRUE,non-mutator,REL8601B
+topA,A+2,20000,FALSE,non-mutator,REL8601B
+pykF,A+2,20000,TRUE,non-mutator,REL8601B
+spoT,A+2,20000,TRUE,non-mutator,REL8601B
+yijC (fabR),A+2,20000,FALSE,non-mutator,REL8601B
+hslU,A+2,20000,TRUE,non-mutator,REL8601B
+iclR,A+2,20000,TRUE,non-mutator,REL8601B
+nadR,A+2,20000,TRUE,non-mutator,REL8601B
+ybaL,A+3,500,FALSE,non-mutator,REL770A
+topA,A+3,500,FALSE,non-mutator,REL770A
+pykF,A+3,500,FALSE,non-mutator,REL770A
+spoT,A+3,500,FALSE,non-mutator,REL770A
+yijC (fabR),A+3,500,FALSE,non-mutator,REL770A
+hslU,A+3,500,FALSE,non-mutator,REL770A
+iclR,A+3,500,FALSE,non-mutator,REL770A
+nadR,A+3,500,FALSE,non-mutator,REL770A
+ybaL,A+3,500,FALSE,non-mutator,REL770B
+topA,A+3,500,FALSE,non-mutator,REL770B
+pykF,A+3,500,FALSE,non-mutator,REL770B
+spoT,A+3,500,FALSE,non-mutator,REL770B
+yijC (fabR),A+3,500,FALSE,non-mutator,REL770B
+hslU,A+3,500,FALSE,non-mutator,REL770B
+iclR,A+3,500,FALSE,non-mutator,REL770B
+nadR,A+3,500,TRUE,non-mutator,REL770B
+ybaL,A+3,1000,TRUE,non-mutator,REL960A
+topA,A+3,1000,FALSE,non-mutator,REL960A
+pykF,A+3,1000,TRUE,non-mutator,REL960A
+spoT,A+3,1000,FALSE,non-mutator,REL960A
+yijC (fabR),A+3,1000,FALSE,non-mutator,REL960A
+hslU,A+3,1000,FALSE,non-mutator,REL960A
+iclR,A+3,1000,FALSE,non-mutator,REL960A
+nadR,A+3,1000,FALSE,non-mutator,REL960A
+ybaL,A+3,1000,TRUE,non-mutator,REL960B
+topA,A+3,1000,FALSE,non-mutator,REL960B
+pykF,A+3,1000,TRUE,non-mutator,REL960B
+spoT,A+3,1000,FALSE,non-mutator,REL960B
+yijC (fabR),A+3,1000,FALSE,non-mutator,REL960B
+hslU,A+3,1000,FALSE,non-mutator,REL960B
+iclR,A+3,1000,FALSE,non-mutator,REL960B
+nadR,A+3,1000,FALSE,non-mutator,REL960B
+ybaL,A+3,1500,TRUE,non-mutator,REL1064A
+topA,A+3,1500,FALSE,non-mutator,REL1064A
+pykF,A+3,1500,TRUE,non-mutator,REL1064A
+spoT,A+3,1500,FALSE,non-mutator,REL1064A
+yijC (fabR),A+3,1500,FALSE,non-mutator,REL1064A
+hslU,A+3,1500,FALSE,non-mutator,REL1064A
+iclR,A+3,1500,FALSE,non-mutator,REL1064A
+nadR,A+3,1500,FALSE,non-mutator,REL1064A
+ybaL,A+3,1500,TRUE,non-mutator,REL1064B
+topA,A+3,1500,FALSE,non-mutator,REL1064B
+pykF,A+3,1500,TRUE,non-mutator,REL1064B
+spoT,A+3,1500,TRUE,non-mutator,REL1064B
+yijC (fabR),A+3,1500,FALSE,non-mutator,REL1064B
+hslU,A+3,1500,FALSE,non-mutator,REL1064B
+iclR,A+3,1500,FALSE,non-mutator,REL1064B
+nadR,A+3,1500,FALSE,non-mutator,REL1064B
+ybaL,A+3,2000,TRUE,non-mutator,REL1160A
+topA,A+3,2000,FALSE,non-mutator,REL1160A
+pykF,A+3,2000,TRUE,non-mutator,REL1160A
+spoT,A+3,2000,FALSE,non-mutator,REL1160A
+yijC (fabR),A+3,2000,FALSE,non-mutator,REL1160A
+hslU,A+3,2000,FALSE,non-mutator,REL1160A
+iclR,A+3,2000,FALSE,non-mutator,REL1160A
+nadR,A+3,2000,FALSE,non-mutator,REL1160A
+ybaL,A+3,2000,TRUE,non-mutator,REL1160B
+topA,A+3,2000,FALSE,non-mutator,REL1160B
+pykF,A+3,2000,TRUE,non-mutator,REL1160B
+spoT,A+3,2000,TRUE,non-mutator,REL1160B
+yijC (fabR),A+3,2000,FALSE,non-mutator,REL1160B
+hslU,A+3,2000,FALSE,non-mutator,REL1160B
+iclR,A+3,2000,FALSE,non-mutator,REL1160B
+nadR,A+3,2000,FALSE,non-mutator,REL1160B
+ybaL,A+3,5000,TRUE,point-mutator,REL2175A
+topA,A+3,5000,FALSE,point-mutator,REL2175A
+pykF,A+3,5000,TRUE,point-mutator,REL2175A
+spoT,A+3,5000,FALSE,point-mutator,REL2175A
+yijC (fabR),A+3,5000,FALSE,point-mutator,REL2175A
+hslU,A+3,5000,TRUE,point-mutator,REL2175A
+iclR,A+3,5000,TRUE,point-mutator,REL2175A
+nadR,A+3,5000,FALSE,point-mutator,REL2175A
+ybaL,A+3,5000,TRUE,point-mutator,REL2175B
+topA,A+3,5000,FALSE,point-mutator,REL2175B
+pykF,A+3,5000,TRUE,point-mutator,REL2175B
+spoT,A+3,5000,FALSE,point-mutator,REL2175B
+yijC (fabR),A+3,5000,FALSE,point-mutator,REL2175B
+hslU,A+3,5000,TRUE,point-mutator,REL2175B
+iclR,A+3,5000,TRUE,point-mutator,REL2175B
+nadR,A+3,5000,FALSE,point-mutator,REL2175B
+ybaL,A+3,10000,TRUE,point-mutator,REL4532A
+topA,A+3,10000,FALSE,point-mutator,REL4532A
+pykF,A+3,10000,TRUE,point-mutator,REL4532A
+spoT,A+3,10000,FALSE,point-mutator,REL4532A
+yijC (fabR),A+3,10000,FALSE,point-mutator,REL4532A
+hslU,A+3,10000,TRUE,point-mutator,REL4532A
+iclR,A+3,10000,TRUE,point-mutator,REL4532A
+nadR,A+3,10000,TRUE,point-mutator,REL4532A
+ybaL,A+3,10000,TRUE,point-mutator,REL4532B
+topA,A+3,10000,FALSE,point-mutator,REL4532B
+pykF,A+3,10000,TRUE,point-mutator,REL4532B
+spoT,A+3,10000,FALSE,point-mutator,REL4532B
+yijC (fabR),A+3,10000,FALSE,point-mutator,REL4532B
+hslU,A+3,10000,TRUE,point-mutator,REL4532B
+iclR,A+3,10000,TRUE,point-mutator,REL4532B
+nadR,A+3,10000,TRUE,point-mutator,REL4532B
+ybaL,A+3,15000,TRUE,point-mutator,REL7185A
+topA,A+3,15000,TRUE,point-mutator,REL7185A
+pykF,A+3,15000,TRUE,point-mutator,REL7185A
+spoT,A+3,15000,FALSE,point-mutator,REL7185A
+yijC (fabR),A+3,15000,FALSE,point-mutator,REL7185A
+hslU,A+3,15000,TRUE,point-mutator,REL7185A
+iclR,A+3,15000,TRUE,point-mutator,REL7185A
+nadR,A+3,15000,TRUE,point-mutator,REL7185A
+ybaL,A+3,15000,TRUE,point-mutator,REL7185B
+topA,A+3,15000,TRUE,point-mutator,REL7185B
+pykF,A+3,15000,TRUE,point-mutator,REL7185B
+spoT,A+3,15000,FALSE,point-mutator,REL7185B
+yijC (fabR),A+3,15000,FALSE,point-mutator,REL7185B
+hslU,A+3,15000,TRUE,point-mutator,REL7185B
+iclR,A+3,15000,TRUE,point-mutator,REL7185B
+nadR,A+3,15000,TRUE,point-mutator,REL7185B
+ybaL,A+3,20000,TRUE,point-mutator,REL8602A
+topA,A+3,20000,TRUE,point-mutator,REL8602A
+pykF,A+3,20000,TRUE,point-mutator,REL8602A
+spoT,A+3,20000,TRUE,point-mutator,REL8602A
+yijC (fabR),A+3,20000,FALSE,point-mutator,REL8602A
+hslU,A+3,20000,TRUE,point-mutator,REL8602A
+iclR,A+3,20000,TRUE,point-mutator,REL8602A
+nadR,A+3,20000,TRUE,point-mutator,REL8602A
+ybaL,A+3,20000,TRUE,point-mutator,REL8602B
+topA,A+3,20000,TRUE,point-mutator,REL8602B
+pykF,A+3,20000,TRUE,point-mutator,REL8602B
+spoT,A+3,20000,TRUE,point-mutator,REL8602B
+yijC (fabR),A+3,20000,FALSE,point-mutator,REL8602B
+hslU,A+3,20000,TRUE,point-mutator,REL8602B
+iclR,A+3,20000,TRUE,point-mutator,REL8602B
+nadR,A+3,20000,TRUE,point-mutator,REL8602B
+ybaL,A+4,500,FALSE,non-mutator ,REL771A
+topA,A+4,500,FALSE,non-mutator ,REL771A
+pykF,A+4,500,FALSE,non-mutator ,REL771A
+spoT,A+4,500,TRUE,non-mutator ,REL771A
+yijC (fabR),A+4,500,FALSE,non-mutator ,REL771A
+hslU,A+4,500,FALSE,non-mutator ,REL771A
+iclR,A+4,500,FALSE,non-mutator ,REL771A
+nadR,A+4,500,FALSE,non-mutator ,REL771A
+ybaL,A+4,500,FALSE,non-mutator ,REL771B
+topA,A+4,500,FALSE,non-mutator ,REL771B
+pykF,A+4,500,TRUE,non-mutator ,REL771B
+spoT,A+4,500,TRUE,non-mutator ,REL771B
+yijC (fabR),A+4,500,FALSE,non-mutator ,REL771B
+hslU,A+4,500,FALSE,non-mutator ,REL771B
+iclR,A+4,500,FALSE,non-mutator ,REL771B
+nadR,A+4,500,FALSE,non-mutator ,REL771B
+ybaL,A+4,1000,FALSE,non-mutator ,REL961A
+topA,A+4,1000,FALSE,non-mutator ,REL961A
+pykF,A+4,1000,TRUE,non-mutator ,REL961A
+spoT,A+4,1000,TRUE,non-mutator ,REL961A
+yijC (fabR),A+4,1000,FALSE,non-mutator ,REL961A
+hslU,A+4,1000,FALSE,non-mutator ,REL961A
+iclR,A+4,1000,FALSE,non-mutator ,REL961A
+nadR,A+4,1000,FALSE,non-mutator ,REL961A
+ybaL,A+4,1000,FALSE,non-mutator ,REL961B
+topA,A+4,1000,FALSE,non-mutator ,REL961B
+pykF,A+4,1000,TRUE,non-mutator ,REL961B
+spoT,A+4,1000,TRUE,non-mutator ,REL961B
+yijC (fabR),A+4,1000,FALSE,non-mutator ,REL961B
+hslU,A+4,1000,FALSE,non-mutator ,REL961B
+iclR,A+4,1000,FALSE,non-mutator ,REL961B
+nadR,A+4,1000,FALSE,non-mutator ,REL961B
+ybaL,A+4,1500,FALSE,non-mutator ,REL1065A
+topA,A+4,1500,FALSE,non-mutator ,REL1065A
+pykF,A+4,1500,TRUE,non-mutator ,REL1065A
+spoT,A+4,1500,TRUE,non-mutator ,REL1065A
+yijC (fabR),A+4,1500,FALSE,non-mutator ,REL1065A
+hslU,A+4,1500,FALSE,non-mutator ,REL1065A
+iclR,A+4,1500,FALSE,non-mutator ,REL1065A
+nadR,A+4,1500,FALSE,non-mutator ,REL1065A
+ybaL,A+4,1500,FALSE,non-mutator ,REL1065B
+topA,A+4,1500,FALSE,non-mutator ,REL1065B
+pykF,A+4,1500,TRUE,non-mutator ,REL1065B
+spoT,A+4,1500,TRUE,non-mutator ,REL1065B
+yijC (fabR),A+4,1500,FALSE,non-mutator ,REL1065B
+hslU,A+4,1500,FALSE,non-mutator ,REL1065B
+iclR,A+4,1500,FALSE,non-mutator ,REL1065B
+nadR,A+4,1500,FALSE,non-mutator ,REL1065B
+ybaL,A+4,2000,FALSE,non-mutator ,REL1161A
+topA,A+4,2000,FALSE,non-mutator ,REL1161A
+pykF,A+4,2000,TRUE,non-mutator ,REL1161A
+spoT,A+4,2000,TRUE,non-mutator ,REL1161A
+yijC (fabR),A+4,2000,FALSE,non-mutator ,REL1161A
+hslU,A+4,2000,FALSE,non-mutator ,REL1161A
+iclR,A+4,2000,TRUE,non-mutator ,REL1161A
+nadR,A+4,2000,FALSE,non-mutator ,REL1161A
+ybaL,A+4,2000,FALSE,non-mutator ,REL1161B
+topA,A+4,2000,FALSE,non-mutator ,REL1161B
+pykF,A+4,2000,TRUE,non-mutator ,REL1161B
+spoT,A+4,2000,TRUE,non-mutator ,REL1161B
+yijC (fabR),A+4,2000,FALSE,non-mutator ,REL1161B
+hslU,A+4,2000,FALSE,non-mutator ,REL1161B
+iclR,A+4,2000,FALSE,non-mutator ,REL1161B
+nadR,A+4,2000,TRUE,non-mutator ,REL1161B
+ybaL,A+4,5000,FALSE,non-mutator ,REL2176A
+topA,A+4,5000,FALSE,non-mutator ,REL2176A
+pykF,A+4,5000,TRUE,non-mutator ,REL2176A
+spoT,A+4,5000,TRUE,non-mutator ,REL2176A
+yijC (fabR),A+4,5000,FALSE,non-mutator ,REL2176A
+hslU,A+4,5000,TRUE,non-mutator ,REL2176A
+iclR,A+4,5000,FALSE,non-mutator ,REL2176A
+nadR,A+4,5000,FALSE,non-mutator ,REL2176A
+ybaL,A+4,5000,FALSE,non-mutator ,REL2176B
+topA,A+4,5000,FALSE,non-mutator ,REL2176B
+pykF,A+4,5000,TRUE,non-mutator ,REL2176B
+spoT,A+4,5000,TRUE,non-mutator ,REL2176B
+yijC (fabR),A+4,5000,FALSE,non-mutator ,REL2176B
+hslU,A+4,5000,TRUE,non-mutator ,REL2176B
+iclR,A+4,5000,FALSE,non-mutator ,REL2176B
+nadR,A+4,5000,FALSE,non-mutator ,REL2176B
+ybaL,A+4,10000,FALSE,non-mutator ,REL4533A
+topA,A+4,10000,FALSE,non-mutator ,REL4533A
+pykF,A+4,10000,TRUE,non-mutator ,REL4533A
+spoT,A+4,10000,TRUE,non-mutator ,REL4533A
+yijC (fabR),A+4,10000,FALSE,non-mutator ,REL4533A
+hslU,A+4,10000,TRUE,non-mutator ,REL4533A
+iclR,A+4,10000,TRUE,non-mutator ,REL4533A
+nadR,A+4,10000,TRUE,non-mutator ,REL4533A
+ybaL,A+4,10000,FALSE,non-mutator ,REL4533B
+topA,A+4,10000,FALSE,non-mutator ,REL4533B
+pykF,A+4,10000,TRUE,non-mutator ,REL4533B
+spoT,A+4,10000,TRUE,non-mutator ,REL4533B
+yijC (fabR),A+4,10000,FALSE,non-mutator ,REL4533B
+hslU,A+4,10000,TRUE,non-mutator ,REL4533B
+iclR,A+4,10000,TRUE,non-mutator ,REL4533B
+nadR,A+4,10000,TRUE,non-mutator ,REL4533B
+ybaL,A+4,15000,FALSE,non-mutator ,REL7186A
+topA,A+4,15000,FALSE,non-mutator ,REL7186A
+pykF,A+4,15000,TRUE,non-mutator ,REL7186A
+spoT,A+4,15000,TRUE,non-mutator ,REL7186A
+yijC (fabR),A+4,15000,FALSE,non-mutator ,REL7186A
+hslU,A+4,15000,TRUE,non-mutator ,REL7186A
+iclR,A+4,15000,TRUE,non-mutator ,REL7186A
+nadR,A+4,15000,TRUE,non-mutator ,REL7186A
+ybaL,A+4,15000,FALSE,non-mutator ,REL7186B
+topA,A+4,15000,FALSE,non-mutator ,REL7186B
+pykF,A+4,15000,TRUE,non-mutator ,REL7186B
+spoT,A+4,15000,TRUE,non-mutator ,REL7186B
+yijC (fabR),A+4,15000,FALSE,non-mutator ,REL7186B
+hslU,A+4,15000,TRUE,non-mutator ,REL7186B
+iclR,A+4,15000,TRUE,non-mutator ,REL7186B
+nadR,A+4,15000,TRUE,non-mutator ,REL7186B
+ybaL,A+4,20000,FALSE,non-mutator ,REL8603A
+topA,A+4,20000,FALSE,non-mutator ,REL8603A
+pykF,A+4,20000,TRUE,non-mutator ,REL8603A
+spoT,A+4,20000,TRUE,non-mutator ,REL8603A
+yijC (fabR),A+4,20000,FALSE,non-mutator ,REL8603A
+hslU,A+4,20000,TRUE,non-mutator ,REL8603A
+iclR,A+4,20000,TRUE,non-mutator ,REL8603A
+nadR,A+4,20000,TRUE,non-mutator ,REL8603A
+ybaL,A+4,20000,FALSE,non-mutator ,REL8603B
+topA,A+4,20000,FALSE,non-mutator ,REL8603B
+pykF,A+4,20000,TRUE,non-mutator ,REL8603B
+spoT,A+4,20000,TRUE,non-mutator ,REL8603B
+yijC (fabR),A+4,20000,FALSE,non-mutator ,REL8603B
+hslU,A+4,20000,TRUE,non-mutator ,REL8603B
+iclR,A+4,20000,TRUE,non-mutator ,REL8603B
+nadR,A+4,20000,TRUE,non-mutator ,REL8603B
+ybaL,A+5,500,FALSE,non-mutator ,REL772A
+topA,A+5,500,FALSE,non-mutator ,REL772A
+pykF,A+5,500,FALSE,non-mutator ,REL772A
+spoT,A+5,500,FALSE,non-mutator ,REL772A
+yijC (fabR),A+5,500,FALSE,non-mutator ,REL772A
+hslU,A+5,500,FALSE,non-mutator ,REL772A
+iclR,A+5,500,FALSE,non-mutator ,REL772A
+nadR,A+5,500,FALSE,non-mutator ,REL772A
+ybaL,A+5,500,FALSE,non-mutator ,REL772B
+topA,A+5,500,FALSE,non-mutator ,REL772B
+pykF,A+5,500,FALSE,non-mutator ,REL772B
+spoT,A+5,500,FALSE,non-mutator ,REL772B
+yijC (fabR),A+5,500,FALSE,non-mutator ,REL772B
+hslU,A+5,500,FALSE,non-mutator ,REL772B
+iclR,A+5,500,FALSE,non-mutator ,REL772B
+nadR,A+5,500,FALSE,non-mutator ,REL772B
+ybaL,A+5,1000,FALSE,non-mutator ,REL962A
+topA,A+5,1000,FALSE,non-mutator ,REL962A
+pykF,A+5,1000,TRUE,non-mutator ,REL962A
+spoT,A+5,1000,FALSE,non-mutator ,REL962A
+yijC (fabR),A+5,1000,TRUE,non-mutator ,REL962A
+hslU,A+5,1000,FALSE,non-mutator ,REL962A
+iclR,A+5,1000,FALSE,non-mutator ,REL962A
+nadR,A+5,1000,TRUE,non-mutator ,REL962A
+ybaL,A+5,1000,FALSE,non-mutator ,REL962B
+topA,A+5,1000,FALSE,non-mutator ,REL962B
+pykF,A+5,1000,FALSE,non-mutator ,REL962B
+spoT,A+5,1000,FALSE,non-mutator ,REL962B
+yijC (fabR),A+5,1000,FALSE,non-mutator ,REL962B
+hslU,A+5,1000,FALSE,non-mutator ,REL962B
+iclR,A+5,1000,FALSE,non-mutator ,REL962B
+nadR,A+5,1000,FALSE,non-mutator ,REL962B
+ybaL,A+5,1500,FALSE,non-mutator ,REL1066A
+topA,A+5,1500,FALSE,non-mutator ,REL1066A
+pykF,A+5,1500,TRUE,non-mutator ,REL1066A
+spoT,A+5,1500,FALSE,non-mutator ,REL1066A
+yijC (fabR),A+5,1500,FALSE,non-mutator ,REL1066A
+hslU,A+5,1500,FALSE,non-mutator ,REL1066A
+iclR,A+5,1500,FALSE,non-mutator ,REL1066A
+nadR,A+5,1500,FALSE,non-mutator ,REL1066A
+ybaL,A+5,1500,FALSE,non-mutator ,REL1066B
+topA,A+5,1500,FALSE,non-mutator ,REL1066B
+pykF,A+5,1500,TRUE,non-mutator ,REL1066B
+spoT,A+5,1500,FALSE,non-mutator ,REL1066B
+yijC (fabR),A+5,1500,TRUE,non-mutator ,REL1066B
+hslU,A+5,1500,FALSE,non-mutator ,REL1066B
+iclR,A+5,1500,FALSE,non-mutator ,REL1066B
+nadR,A+5,1500,FALSE,non-mutator ,REL1066B
+ybaL,A+5,2000,FALSE,non-mutator ,REL1162A
+topA,A+5,2000,FALSE,non-mutator ,REL1162A
+pykF,A+5,2000,TRUE,non-mutator ,REL1162A
+spoT,A+5,2000,FALSE,non-mutator ,REL1162A
+yijC (fabR),A+5,2000,FALSE,non-mutator ,REL1162A
+hslU,A+5,2000,FALSE,non-mutator ,REL1162A
+iclR,A+5,2000,FALSE,non-mutator ,REL1162A
+nadR,A+5,2000,FALSE,non-mutator ,REL1162A
+ybaL,A+5,2000,FALSE,non-mutator ,REL1162B
+topA,A+5,2000,FALSE,non-mutator ,REL1162B
+pykF,A+5,2000,TRUE,non-mutator ,REL1162B
+spoT,A+5,2000,FALSE,non-mutator ,REL1162B
+yijC (fabR),A+5,2000,FALSE,non-mutator ,REL1162B
+hslU,A+5,2000,FALSE,non-mutator ,REL1162B
+iclR,A+5,2000,FALSE,non-mutator ,REL1162B
+nadR,A+5,2000,FALSE,non-mutator ,REL1162B
+ybaL,A+5,5000,FALSE,non-mutator ,REL2177A
+topA,A+5,5000,FALSE,non-mutator ,REL2177A
+pykF,A+5,5000,TRUE,non-mutator ,REL2177A
+spoT,A+5,5000,FALSE,non-mutator ,REL2177A
+yijC (fabR),A+5,5000,FALSE,non-mutator ,REL2177A
+hslU,A+5,5000,TRUE,non-mutator ,REL2177A
+iclR,A+5,5000,TRUE,non-mutator ,REL2177A
+nadR,A+5,5000,FALSE,non-mutator ,REL2177A
+ybaL,A+5,5000,FALSE,non-mutator ,REL2177B
+topA,A+5,5000,FALSE,non-mutator ,REL2177B
+pykF,A+5,5000,TRUE,non-mutator ,REL2177B
+spoT,A+5,5000,FALSE,non-mutator ,REL2177B
+yijC (fabR),A+5,5000,FALSE,non-mutator ,REL2177B
+hslU,A+5,5000,TRUE,non-mutator ,REL2177B
+iclR,A+5,5000,TRUE,non-mutator ,REL2177B
+nadR,A+5,5000,FALSE,non-mutator ,REL2177B
+ybaL,A+5,10000,FALSE,non-mutator ,REL4534A
+topA,A+5,10000,FALSE,non-mutator ,REL4534A
+pykF,A+5,10000,TRUE,non-mutator ,REL4534A
+spoT,A+5,10000,FALSE,non-mutator ,REL4534A
+yijC (fabR),A+5,10000,FALSE,non-mutator ,REL4534A
+hslU,A+5,10000,TRUE,non-mutator ,REL4534A
+iclR,A+5,10000,TRUE,non-mutator ,REL4534A
+nadR,A+5,10000,FALSE,non-mutator ,REL4534A
+ybaL,A+5,10000,FALSE,non-mutator ,REL4534B
+topA,A+5,10000,FALSE,non-mutator ,REL4534B
+pykF,A+5,10000,TRUE,non-mutator ,REL4534B
+spoT,A+5,10000,FALSE,non-mutator ,REL4534B
+yijC (fabR),A+5,10000,FALSE,non-mutator ,REL4534B
+hslU,A+5,10000,TRUE,non-mutator ,REL4534B
+iclR,A+5,10000,TRUE,non-mutator ,REL4534B
+nadR,A+5,10000,FALSE,non-mutator ,REL4534B
+ybaL,A+5,15000,FALSE,non-mutator ,REL7187A
+topA,A+5,15000,FALSE,non-mutator ,REL7187A
+pykF,A+5,15000,TRUE,non-mutator ,REL7187A
+spoT,A+5,15000,FALSE,non-mutator ,REL7187A
+yijC (fabR),A+5,15000,FALSE,non-mutator ,REL7187A
+hslU,A+5,15000,TRUE,non-mutator ,REL7187A
+iclR,A+5,15000,TRUE,non-mutator ,REL7187A
+nadR,A+5,15000,TRUE,non-mutator ,REL7187A
+ybaL,A+5,15000,FALSE,non-mutator ,REL7187B
+topA,A+5,15000,FALSE,non-mutator ,REL7187B
+pykF,A+5,15000,TRUE,non-mutator ,REL7187B
+spoT,A+5,15000,FALSE,non-mutator ,REL7187B
+yijC (fabR),A+5,15000,FALSE,non-mutator ,REL7187B
+hslU,A+5,15000,TRUE,non-mutator ,REL7187B
+iclR,A+5,15000,TRUE,non-mutator ,REL7187B
+nadR,A+5,15000,TRUE,non-mutator ,REL7187B
+ybaL,A+5,20000,FALSE,non-mutator ,REL8604A
+topA,A+5,20000,FALSE,non-mutator ,REL8604A
+pykF,A+5,20000,TRUE,non-mutator ,REL8604A
+spoT,A+5,20000,FALSE,non-mutator ,REL8604A
+yijC (fabR),A+5,20000,FALSE,non-mutator ,REL8604A
+hslU,A+5,20000,TRUE,non-mutator ,REL8604A
+iclR,A+5,20000,TRUE,non-mutator ,REL8604A
+nadR,A+5,20000,TRUE,non-mutator ,REL8604A
+ybaL,A+5,20000,FALSE,non-mutator ,REL8604B
+topA,A+5,20000,FALSE,non-mutator ,REL8604B
+pykF,A+5,20000,TRUE,non-mutator ,REL8604B
+spoT,A+5,20000,FALSE,non-mutator ,REL8604B
+yijC (fabR),A+5,20000,FALSE,non-mutator ,REL8604B
+hslU,A+5,20000,TRUE,non-mutator ,REL8604B
+iclR,A+5,20000,TRUE,non-mutator ,REL8604B
+nadR,A+5,20000,TRUE,non-mutator ,REL8604B
+ybaL,A+6,500,FALSE,non-mutator ,REL773A
+topA,A+6,500,FALSE,non-mutator ,REL773A
+pykF,A+6,500,TRUE,non-mutator ,REL773A
+spoT,A+6,500,FALSE,non-mutator ,REL773A
+yijC (fabR),A+6,500,FALSE,non-mutator ,REL773A
+hslU,A+6,500,FALSE,non-mutator ,REL773A
+iclR,A+6,500,FALSE,non-mutator ,REL773A
+nadR,A+6,500,FALSE,non-mutator ,REL773A
+ybaL,A+6,500,FALSE,non-mutator ,REL773B
+topA,A+6,500,FALSE,non-mutator ,REL773B
+pykF,A+6,500,FALSE,non-mutator ,REL773B
+spoT,A+6,500,FALSE,non-mutator ,REL773B
+yijC (fabR),A+6,500,FALSE,non-mutator ,REL773B
+hslU,A+6,500,FALSE,non-mutator ,REL773B
+iclR,A+6,500,FALSE,non-mutator ,REL773B
+nadR,A+6,500,FALSE,non-mutator ,REL773B
+ybaL,A+6,1000,FALSE,non-mutator ,REL963A
+topA,A+6,1000,FALSE,non-mutator ,REL963A
+pykF,A+6,1000,TRUE,non-mutator ,REL963A
+spoT,A+6,1000,FALSE,non-mutator ,REL963A
+yijC (fabR),A+6,1000,FALSE,non-mutator ,REL963A
+hslU,A+6,1000,FALSE,non-mutator ,REL963A
+iclR,A+6,1000,FALSE,non-mutator ,REL963A
+nadR,A+6,1000,FALSE,non-mutator ,REL963A
+ybaL,A+6,1000,FALSE,non-mutator ,REL963B
+topA,A+6,1000,FALSE,non-mutator ,REL963B
+pykF,A+6,1000,TRUE,non-mutator ,REL963B
+spoT,A+6,1000,FALSE,non-mutator ,REL963B
+yijC (fabR),A+6,1000,FALSE,non-mutator ,REL963B
+hslU,A+6,1000,FALSE,non-mutator ,REL963B
+iclR,A+6,1000,FALSE,non-mutator ,REL963B
+nadR,A+6,1000,FALSE,non-mutator ,REL963B
+ybaL,A+6,1500,FALSE,non-mutator ,REL1067A
+topA,A+6,1500,FALSE,non-mutator ,REL1067A
+pykF,A+6,1500,TRUE,non-mutator ,REL1067A
+spoT,A+6,1500,FALSE,non-mutator ,REL1067A
+yijC (fabR),A+6,1500,FALSE,non-mutator ,REL1067A
+hslU,A+6,1500,FALSE,non-mutator ,REL1067A
+iclR,A+6,1500,TRUE,non-mutator ,REL1067A
+nadR,A+6,1500,FALSE,non-mutator ,REL1067A
+ybaL,A+6,1500,FALSE,non-mutator ,REL1067B
+topA,A+6,1500,FALSE,non-mutator ,REL1067B
+pykF,A+6,1500,TRUE,non-mutator ,REL1067B
+spoT,A+6,1500,FALSE,non-mutator ,REL1067B
+yijC (fabR),A+6,1500,FALSE,non-mutator ,REL1067B
+hslU,A+6,1500,FALSE,non-mutator ,REL1067B
+iclR,A+6,1500,FALSE,non-mutator ,REL1067B
+nadR,A+6,1500,FALSE,non-mutator ,REL1067B
+ybaL,A+6,2000,FALSE,non-mutator ,REL1163A
+topA,A+6,2000,FALSE,non-mutator ,REL1163A
+pykF,A+6,2000,TRUE,non-mutator ,REL1163A
+spoT,A+6,2000,FALSE,non-mutator ,REL1163A
+yijC (fabR),A+6,2000,FALSE,non-mutator ,REL1163A
+hslU,A+6,2000,FALSE,non-mutator ,REL1163A
+iclR,A+6,2000,FALSE,non-mutator ,REL1163A
+nadR,A+6,2000,FALSE,non-mutator ,REL1163A
+ybaL,A+6,2000,FALSE,non-mutator ,REL1163B
+topA,A+6,2000,FALSE,non-mutator ,REL1163B
+pykF,A+6,2000,TRUE,non-mutator ,REL1163B
+spoT,A+6,2000,FALSE,non-mutator ,REL1163B
+yijC (fabR),A+6,2000,FALSE,non-mutator ,REL1163B
+hslU,A+6,2000,FALSE,non-mutator ,REL1163B
+iclR,A+6,2000,FALSE,non-mutator ,REL1163B
+nadR,A+6,2000,FALSE,non-mutator ,REL1163B
+ybaL,A+6,5000,FALSE,non-mutator ,REL2178A
+topA,A+6,5000,FALSE,non-mutator ,REL2178A
+pykF,A+6,5000,TRUE,non-mutator ,REL2178A
+spoT,A+6,5000,FALSE,non-mutator ,REL2178A
+yijC (fabR),A+6,5000,FALSE,non-mutator ,REL2178A
+hslU,A+6,5000,FALSE,non-mutator ,REL2178A
+iclR,A+6,5000,TRUE,non-mutator ,REL2178A
+nadR,A+6,5000,FALSE,non-mutator ,REL2178A
+ybaL,A+6,5000,FALSE,non-mutator ,REL2178B
+topA,A+6,5000,FALSE,non-mutator ,REL2178B
+pykF,A+6,5000,TRUE,non-mutator ,REL2178B
+spoT,A+6,5000,FALSE,non-mutator ,REL2178B
+yijC (fabR),A+6,5000,FALSE,non-mutator ,REL2178B
+hslU,A+6,5000,FALSE,non-mutator ,REL2178B
+iclR,A+6,5000,TRUE,non-mutator ,REL2178B
+nadR,A+6,5000,FALSE,non-mutator ,REL2178B
+ybaL,A+6,10000,TRUE,point-mutator,REL4535A
+topA,A+6,10000,TRUE,point-mutator,REL4535A
+pykF,A+6,10000,TRUE,point-mutator,REL4535A
+spoT,A+6,10000,FALSE,point-mutator,REL4535A
+yijC (fabR),A+6,10000,FALSE,point-mutator,REL4535A
+hslU,A+6,10000,TRUE,point-mutator,REL4535A
+iclR,A+6,10000,TRUE,point-mutator,REL4535A
+nadR,A+6,10000,TRUE,point-mutator,REL4535A
+ybaL,A+6,10000,TRUE,point-mutator,REL4535B
+topA,A+6,10000,TRUE,point-mutator,REL4535B
+pykF,A+6,10000,TRUE,point-mutator,REL4535B
+spoT,A+6,10000,FALSE,point-mutator,REL4535B
+yijC (fabR),A+6,10000,FALSE,point-mutator,REL4535B
+hslU,A+6,10000,TRUE,point-mutator,REL4535B
+iclR,A+6,10000,TRUE,point-mutator,REL4535B
+nadR,A+6,10000,TRUE,point-mutator,REL4535B
+ybaL,A+6,15000,TRUE,point-mutator,REL7188A
+topA,A+6,15000,TRUE,point-mutator,REL7188A
+pykF,A+6,15000,TRUE,point-mutator,REL7188A
+spoT,A+6,15000,FALSE,point-mutator,REL7188A
+yijC (fabR),A+6,15000,TRUE,point-mutator,REL7188A
+hslU,A+6,15000,TRUE,point-mutator,REL7188A
+iclR,A+6,15000,TRUE,point-mutator,REL7188A
+nadR,A+6,15000,TRUE,point-mutator,REL7188A
+ybaL,A+6,15000,TRUE,point-mutator,REL7188B
+topA,A+6,15000,TRUE,point-mutator,REL7188B
+pykF,A+6,15000,TRUE,point-mutator,REL7188B
+spoT,A+6,15000,FALSE,point-mutator,REL7188B
+yijC (fabR),A+6,15000,TRUE,point-mutator,REL7188B
+hslU,A+6,15000,TRUE,point-mutator,REL7188B
+iclR,A+6,15000,TRUE,point-mutator,REL7188B
+nadR,A+6,15000,TRUE,point-mutator,REL7188B
+ybaL,A+6,20000,TRUE,point-mutator,REL8605A
+topA,A+6,20000,TRUE,point-mutator,REL8605A
+pykF,A+6,20000,TRUE,point-mutator,REL8605A
+spoT,A+6,20000,FALSE,point-mutator,REL8605A
+yijC (fabR),A+6,20000,TRUE,point-mutator,REL8605A
+hslU,A+6,20000,TRUE,point-mutator,REL8605A
+iclR,A+6,20000,TRUE,point-mutator,REL8605A
+nadR,A+6,20000,TRUE,point-mutator,REL8605A
+ybaL,A+6,20000,TRUE,point-mutator,REL8605B
+topA,A+6,20000,TRUE,point-mutator,REL8605B
+pykF,A+6,20000,TRUE,point-mutator,REL8605B
+spoT,A+6,20000,FALSE,point-mutator,REL8605B
+yijC (fabR),A+6,20000,TRUE,point-mutator,REL8605B
+hslU,A+6,20000,TRUE,point-mutator,REL8605B
+iclR,A+6,20000,TRUE,point-mutator,REL8605B
+nadR,A+6,20000,TRUE,point-mutator,REL8605B
