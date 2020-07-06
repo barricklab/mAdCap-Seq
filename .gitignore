@@ -1,3 +1,7 @@
+# Output files
+*.pdf
+*_output
+
 # History files
 .Rhistory
 .Rapp.history

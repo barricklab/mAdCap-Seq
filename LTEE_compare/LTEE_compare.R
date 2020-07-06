@@ -1,4 +1,5 @@
 source("common.R")
+library(ggplot2)
 library(dplyr)
 options(dplyr.summarise.inform=F) 
 library(forcats)
@@ -6,7 +7,7 @@ library(stringr)
 
 LTEE_compare <- function() {
 
-  full.table = read.csv(file.path("LTEE-input/LTEE_mutation_comparison.csv"))
+  full.table = read.csv(file.path("LTEE_mutation_comparison.csv"))
 
   full.table$generation = as.numeric(full.table$generation)
   full.table$str_generation = str_pad(full.table$generation, 5, pad = "0")
@@ -18,3 +19,5 @@ LTEE_compare <- function() {
   ggsave("LTEE_mutation_presence.pdf", width=8, height=24)
 
 }
+
+LTEE_compare()

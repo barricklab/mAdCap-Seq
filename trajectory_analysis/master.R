@@ -6,7 +6,8 @@ source("grouped_mutations_merge.R")
 source("grouped_mutations_find.R")
 source("consensus_straighten_window_fits.R")
 source("detection_limits.R")
-source("LTEE_compare.R")
+source("combination_graphs.R")
+
 
 complete_base_file_names = c("A1_population_complete", "A2_population_complete", "A3_population_complete", "A7_population_complete")
 
@@ -38,8 +39,9 @@ for (base_file_name in c(window_base_file_names, complete_base_file_names)) {
 
 
 #####
-# Manual curation
-# Copy the files 'initial_output/output/<base_name>_grouped_mutations.csv' and edit to group mutations meeting criteria
+# Manual curation step
+#
+# Copy the files 'initial_output/output/<base_name>_grouped_mutations.csv' and edit to group mutations to meet desired criteria
 # Store the curated files as 'grouped_mutations/<base_name>_grouped_mutations.csv'
 # The scripts in group_mutations_helper_workspace are used for creating valid mutation entries from this evidence
 # Graphs of the grouped evidence are generated under grouped_output/graphs/grouping.
@@ -62,12 +64,10 @@ for (base_file_name in c(window_base_file_names, complete_base_file_names)) {
 
 
 this_autocorrelation_threshold = 0.55
-#for (this_autocorrelation_threshold in c(0.4, 0.45, 0.5, 0.55, 0.6) ) {
   for (base_file_name in complete_base_file_names) {
     cat(base_file_name, "\n")
     rare_graphs_complete(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), paste(grouped_output_path, sep=""), base_file_name, this_autocorrelation_threshold)
 }
-#}
 
 for (base_file_name in window_base_file_names) {
   cat(base_file_name, "\n")
@@ -77,7 +77,5 @@ for (base_file_name in window_base_file_names) {
 consensus_straighten_window_fits(grouped_output_path, window_base_file_names)
 
 combination_graphs()
-
-LTEE_compare()
 
 detection_limits()
