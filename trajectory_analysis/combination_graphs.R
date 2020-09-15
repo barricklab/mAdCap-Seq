@@ -324,7 +324,7 @@ combination_graphs <- function ()
   length.basis.A = 210 + (1035-511+1)
   length.basis.B.or.C = 510-211+1 + 1410-1054+1
   
-  binom.test(ns.in.domain.A, ns.in.domain.A+ns.in.domain.B.or.C, p = length.basis.A/(length.basis.A+length.basis.B.or.C), alternative="greater")
+  print(binom.test(ns.in.domain.A, ns.in.domain.A+ns.in.domain.B.or.C, p = length.basis.A/(length.basis.A+length.basis.B.or.C), alternative="greater"))
   
   
   #################
