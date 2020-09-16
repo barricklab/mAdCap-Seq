@@ -14,7 +14,7 @@ and the _E. coli_ REL606 genome with these regions masked out.
 to perform error correction on raw Illumina reads. After running
 [_breseq_](https://github.com/barricklab/breseq) to predict genetic variants using these files as input, the
 output is converted into a format with the reads supporting the
-reference versus variant alleles using `breseq_output_conversion`. Then
+reference versus variant alleles using `breseq_postprocessing`. Then
 `trajectory_analysis` contains the main scripts for filtering and
 analyzing the trajectories of mutation frequencies. `LTEE-compare` and
 `protein_structure` contain scripts for the final analyses of the sets
