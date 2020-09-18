@@ -18,25 +18,25 @@ grouped_mutations_find <- function (variant_read_counts_file_name, total_read_co
   
   exclude_generations = c()
   if (base_file_name=="A1_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A2_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A3_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A6_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A7_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A9_population_window") {
-    exclude_generations = c(133.4, 160.08, 186.76, 213.44)
+    exclude_generations = c(163.4, 190.08, 216.76, 243.44)
   } else if (base_file_name=="A1_population_complete") {
-    exclude_generations = c(139,153,166,179,193,206)
+    exclude_generations = c(169,183,196,209,223,236)
   } else if (base_file_name=="A2_population_complete") {
-    exclude_generations = c(139,153,166,179,193,206,240.12,480.24)
+    exclude_generations = c(169,183,196,209,223,236,270.12,510.24)
   } else  if (base_file_name=="A3_population_complete") {
-    exclude_generations = c(139,153,166,179,193,206)
+    exclude_generations = c(169,183,196,209,223,236)
   } else  if (base_file_name=="A7_population_complete") {
-    exclude_generations = c(139,153,166,179,193,206)
+    exclude_generations = c(169,183,196,209,223,236)
   }
   
   #Setup for graphs

@@ -13,7 +13,7 @@ rare_graphs_complete <- function (variant_read_counts_file_name, total_read_coun
   line_thickness = 0.8
   log_frequency_bounds = c(-4,0)
   expanded_log_frequency_bounds = c(-5,0)
-  generation_bounds = c(0,507)
+  generation_bounds = c(30,537)
   myColors <- c("purple", "magenta", "orange", "green", "red", "blue", "brown", "cyan", "grey")
   names(myColors) <- c("hslU", "iclR", "pykF", "nadR", "spoT", "topA", "ybaL", "fabR", "other")
   colScale <- scale_colour_manual(name = "Gene",values = myColors)
@@ -27,13 +27,13 @@ rare_graphs_complete <- function (variant_read_counts_file_name, total_read_coun
   ### also allow us to only look at certain generational timepoints (remove the ones that were collected in a different Illumina run or failed)
   remove_generations = c()
   if (base_file_name=="A1_population_complete") {
-    remove_generations = c(139,153,166,179,193,206)
+    remove_generations = c(169,183,196,209,223,236)
   } else if (base_file_name=="A2_population_complete") {
-    remove_generations = c(139,153,166,179,193,206,240.12,480.24)
+    remove_generations = c(169,183,196,209,223,236,270.12,510.24)
   } else  if (base_file_name=="A3_population_complete") {
-    remove_generations = c(139,153,166,179,193,206)
+    remove_generations = c(169,183,196,209,223,236)
   } else  if (base_file_name=="A7_population_complete") {
-    remove_generations = c(139,153,166,179,193,206)
+    remove_generations = c(169,183,196,209,223,236)
   }
   
   res = load_count_files(variant_read_counts_file_name, total_read_counts_file_name)

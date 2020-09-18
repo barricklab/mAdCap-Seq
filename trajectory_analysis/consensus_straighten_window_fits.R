@@ -1,6 +1,10 @@
 #fits windows across all populations using the same fitness increase
 consensus_straighten_window_fits <- function(output_path, base_file_names)
 {
+  #debug
+  #output_path="grouped_output"
+  #base_file_names= c("A1_population_window", "A2_population_window", "A3_population_window", "A6_population_window", "A7_population_window", "A9_population_window")
+    
   source("common.R")
   
   ################################################
@@ -12,14 +16,10 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
   theme_update(panel.border=element_rect(color="black", fill=NA, size=1), legend.key=element_rect(color=NA, fill=NA))
   line_thickness = 0.8
   log_frequency_bounds = c(-5,0)
-  generation_bounds = c(133,213)
+  generation_bounds = c(163,243)
   myColors <- c("purple", "magenta", "orange", "green", "red", "blue", "brown", "cyan", "grey")
   names(myColors) <- c("hslU", "iclR", "pykF", "nadR", "spoT", "topA", "ybaL", "fabR", "other")
   colScale <- scale_colour_manual(name = "Gene",values = myColors)
-  
-  
-  output_path = grouped_output_path
-  base_file_names = window_base_file_names
   
   ### Here we infer population fitness as the best parameters that straighten out the graphs
   
@@ -78,6 +78,9 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
   fit_slope_intercept = c()
   for (i in 1:num_gen_of_data) {
     
+    first_fit_gen = the.generations[num_gen_of_data-i+1]
+    
+    
     fit_slope_intercept[[i]] = glm(as.formula(formula_string), data=merged_little_table, binomial)
     #a = anova(fit_slope_intercept[[i]], fit_slope_intercept[[i+1]], test = "Chisq")
     cat("Model with ", i-1, " fitness parameters ::: \n");
@@ -89,7 +92,6 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     
     cat ("  AIC = ", the.AIC, " AICc = ", the.AICc, "\n")
     
-    first_fit_gen = the.generations[num_gen_of_data-i+1]
     
     all_fitnesses = rep(0, num_gen_of_data-1)
     if (i != 1) {
@@ -105,13 +107,13 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
         cat("  ", parameter_name, " = ", coef(fit_slope_intercept[[i]])[parameter_name], " gen (", gen_initial, "-", gen_final, ") total fitness in interval (per gen) = ", -(coef(fit_slope_intercept[[i]])[parameter_name]), "\n")
       }
     }
-    
+      
 
     #if ((the.AIC < best.AIC) && (sum(all_fitnesses) > 0)) {
     #if ((the.AIC < best.AIC)) {
-    if (first_fit_gen == 166)
+    if (first_fit_gen == 190.08)
     {
-      cat("   ====> Best because first_fit_gen == 166", "\n")
+      cat("   ====> Best because first_fit_gen == 190.08", "\n")
       
       best_model_index = i
       best.AIC = the.AIC;
@@ -126,7 +128,13 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
   cat("Best model has this many fitness parameters: ", (best_model_index-1), "\n")
   
   best_model = fit_slope_intercept[[best_model_index]]
-  best_model.confint = confint(best_model, c("fitness_6", "fitness_7", "fitness_8", "fitness_9", "fitness_10"))
+  
+  #For starting at 196
+  #best_model.confint = confint(best_model, c("fitness_6", "fitness_7", "fitness_8", "fitness_9", "fitness_10"))
+  
+  #For starting at 190.08
+  best_model.confint = confint(best_model) #, c("fitness_5", "fitness_6", "fitness_7", "fitness_8", "fitness_9", "fitness_10"))
+  
   
   ## here's a bar graph of the fitness over time with error bars
   
@@ -144,9 +152,9 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
       
       colname = paste("fitness_", i, sep="")
       
-      this.fitness = exp(-coef(best_model)[colname])-1
-      this.fitness.confint.U = exp(-best_model.confint[colname,1])-1
-      this.fitness.confint.L = exp(-best_model.confint[colname,2])-1
+      this.fitness = (exp(-coef(best_model)[colname])-1)/log(2)
+      this.fitness.confint.U = (exp(-best_model.confint[colname,1])-1)/log(2)
+      this.fitness.confint.L = (exp(-best_model.confint[colname,2])-1)/log(2)
       
       final_gen = the.generations[i]
       initial_gen = the.generations[i-1]
@@ -171,6 +179,8 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     p + geom_bar(aes(x=generation, y=fitness, width = w), position = "identity", stat = "identity", fill="gray", color="black") + geom_errorbar(aes(x=generation, ymin=L, ymax=U), width=2) + coord_cartesian(xlim=c(the.generations[1],the.generations[num_gen_of_data]), ylim=c(-0.1,0.15))
     ggsave(filename=file.path(output_path, "output", paste("consensus_population_fitness.pdf", sep="")), width=plot.width, height=plot.height)
     
+    #save fitnesses
+    write.csv(step_fitnesses, file.path(output_path, "output", paste("consensus_population_fitness.csv", sep="")))
   }
   
   ## compare to per population fitness model with same number of parameters
@@ -185,17 +195,16 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
   
   ##Per-population models fit much better
   
+  population.accounted.for.fitness.table = data.frame()
   
   for (base_file_name in base_file_names) {
     
     this.population.table = subset(merged_little_table, population==base_file_name)
     
-    best_model.confint = confint(best_model, paste0("full_name", as.factor(this.population.table$full_name), ":generation") )
-    
     straightened.filtered.output.table = read.csv(file=file.path(output_path, "output", paste(base_file_name, "_significant_mutations.csv", sep="")))
     straightened.filtered.output.table$original.selection.coefficient = straightened.filtered.output.table$selection.coefficient
-    straightened.filtered.output.table$selection.coefficient.CI95L = straightened.filtered.output.table$selection.coefficient.stderr
-    straightened.filtered.output.table$selection.coefficient.CI95U = straightened.filtered.output.table$selection.coefficient.stderr
+    straightened.filtered.output.table$original.selection.coefficient.CI95L = straightened.filtered.output.table$selection.coefficient.CI95L
+    straightened.filtered.output.table$original.selection.coefficient.CI95U = straightened.filtered.output.table$selection.coefficient.CI95U
     
     straightened.filtered.output.table$original.slope = straightened.filtered.output.table$slope
     straightened.filtered.output.table$original.slope.stderr = straightened.filtered.output.table$slope.stderr
@@ -213,6 +222,10 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
       straightened.filtered.output.table$selection.coefficient[i] = exp(this.slope)-1
       straightened.filtered.output.table$selection.coefficient.CI95L[i] = exp(best_model.confint[slope_name, 1])-1
       straightened.filtered.output.table$selection.coefficient.CI95U[i] = exp(best_model.confint[slope_name, 2])-1
+      
+      straightened.filtered.output.table$fitness.effect[i] = straightened.filtered.output.table$selection.coefficient[i]/log(2)
+      straightened.filtered.output.table$fitness.effect.CI95L[i] = straightened.filtered.output.table$selection.coefficient.CI95L[i]/log(2)
+      straightened.filtered.output.table$fitness.effect.CI95U[i] = straightened.filtered.output.table$selection.coefficient.CI95U[i]/log(2)
       
       straightened.filtered.output.table$slope[i] = this.slope
       straightened.filtered.output.table$slope.stderr[i] = this.slope.stderr 
@@ -243,5 +256,62 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     
     write.csv(straightened.filtered.output.table, file=file.path(output_path, "output", paste(base_file_name, "_consensus_straightened_significant_mutations.csv", sep="")), row.names=F)
     
+    #Now calculate the theoretical population fitness from the observed variants and what proportion it explains
+    name_to_fitness = straightened.filtered.output.table %>% select(full_name, fitness.effect)
+    merged_little_table_plus_fitness =  merged_little_table %>% filter(population==base_file_name) %>% left_join(name_to_fitness, by="full_name")
+    
+    for (i in 1:(nrow(step_fitnesses))) {
+      g = step_fitnesses$generation[i]
+      
+      this_gen = merged_little_table_plus_fitness %>% filter(generation==g)
+
+      if (nrow(this_gen)==0) {
+        next
+      }
+      
+      population.accounted.for.fitness.table = rbind(population.accounted.for.fitness.table,
+                           data.frame(
+                             population = base_file_name, 
+                             generation=g,
+                             relative.fitness = sum(this_gen$frequency*this_gen$fitness.effect)
+                           )
+      )
+    }
   }
+  
+  
+  if (best_model_index != 1) {
+    
+    # step_fitnesses has a generation on each row and a fitness
+    # The fitness is for the interval between the generation on that row and the generation on the next row
+    
+    
+    merged_little_table_plus_fitness = filtered_table_2 %>% left_join(name_to_selection_coefficient, by="full_name")
+    
+    
+
+    this_step_fitnesses$accounted.for.fitness = NA
+    for (i in 1:(nrow(this_step_fitnesses))) {
+      g = this_step_fitnesses$generation[i]
+      
+      this_gen = filtered_table_2_plus_fitness %>% filter(generation==g)
+      this_step_fitnesses$total.mutant.fitness[i] = sum(this_gen$frequency*this_gen$selection.coefficient)
+    }
+    
+    for (i in 1:(nrow(this_step_fitnesses)-1)) {
+      output.table = rbind(output.table,
+                           data.frame(
+                             generation.start = this_step_fitnesses$generation[i], 
+                             generation.end = this_step_fitnesses$generation[i+1], 
+                             population.fitness = this_step_fitnesses$fitness[i], 
+                             total.mutant.fitness = (this_step_fitnesses$total.mutant.fitness[i] + this_step_fitnesses$total.mutant.fitness[i+1]) / 2
+                           )
+      )
+    }
+    output.table$fraction.fitness.accounted.for = output.table$total.mutant.fitness / output.table$population.fitness
+    
+    
+    write.csv(output.table, file.path(output_path, "output", paste(base_file_name, "_population_fitness.csv", sep="")))
+  }
+  
 }

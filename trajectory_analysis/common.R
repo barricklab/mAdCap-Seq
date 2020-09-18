@@ -1,7 +1,7 @@
 library(ggplot2)
 library(plyr)
 library(grid)
-
+library(dplyr)
 
 autocorrelation_coefficient <- function(v) {
   

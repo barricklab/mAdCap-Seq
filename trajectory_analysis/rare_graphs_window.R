@@ -3,14 +3,14 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
   source("common.R")
   
   ## For testing, set these
-  #variant_read_counts_file_name = "grouped_input/A1_population_window.variant.tsv"
-  #total_read_counts_file_name = "grouped_input/A1_population_window.total.tsv"
+  #variant_read_counts_file_name = "grouped_input/A2_population_window.variant.tsv"
+  #total_read_counts_file_name = "grouped_input/A2_population_window.total.tsv"
   #output_path = "grouped_output"
-  #base_file_name = "A1_population_window"
+  #base_file_name = "A2_population_window"
   ### End testing setup
   
-  # DM 100 should be 2E8, but pop size is smaller due to bottlenecks
-  population.size = 2E6
+  # DM 100 is 2E8 cells/ml, the culture size is 10 ml, and there are 1:100 dilutions
+  effective.population.size = 1/((1/2E7 + 1/2E9)/2)
   
   ########### Filter settings ##################
   
@@ -24,7 +24,7 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
   
   ### Also required to be retained as "significant"
   maximum_AIC_required = 200
-  minimum_intercept_required = -15
+  minimum_intercept_required = -100 #-log(effective.population.size)
   
   ################################################
   
@@ -35,7 +35,7 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
   theme_update(panel.border=element_rect(color="black", fill=NA, size=1), legend.key=element_rect(color=NA, fill=NA))
   line_thickness = 0.8
   log_frequency_bounds = c(-5,0)
-  generation_bounds = c(133,213)
+  generation_bounds = c(163,243.44)
   myColors <- c("purple", "magenta", "orange", "green", "red", "blue", "brown", "cyan", "grey")
   names(myColors) <- c("hslU", "iclR", "pykF", "nadR", "spoT", "topA", "ybaL", "fabR", "other")
   colScale <- scale_colour_manual(name = "Gene",values = myColors)
@@ -109,21 +109,6 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
     the.AIC = NA
     
     
-    ##### Unused tests
-    #require first data point be below 1%
-    first_data_point = test_series$log_frequency[1]
-    
-    #special code for ruling out first run artifact
-    g1_log_freq = subset(test_series, generation==133.4)$log_frequency
-    g2_log_freq = subset(test_series, generation==160.08)$log_frequency
-    g3_log_freq = subset(test_series, generation==186.76)$log_frequency
-    g4_log_freq = subset(test_series, generation==213.44)$log_frequency
-    
-    min_first_run_requirement_test = min(g1_log_freq, g2_log_freq, g3_log_freq, g4_log_freq)
-    #if (is.na(first_data_point) || (first_data_point < -2)) {
-    ####################
-    
-    
     fit_slope_intercept = glm(cbind(test_series$variant_read_count, test_series$not_variant_read_count) ~ test_series$generation, binomial)
     
     fit_intercept = glm(cbind(test_series$variant_read_count, test_series$not_variant_read_count) ~ 1, binomial)
@@ -142,7 +127,7 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
     the.adjusted.p_value = the.p_value * nrow(mutation_info)
     
     ### Extra info
-    the.generation.first.appearance = (-log(population.size) - the.intercept)/the.slope
+    the.generation.first.appearance = (-log(effective.population.size) - the.intercept)/the.slope
     nonzero_series = subset(test_series, variant_read_count>0)
     the.non_zero_observations = nrow(nonzero_series)
     
@@ -304,9 +289,9 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
     
     #if ((the.AIC < best.AIC) && (sum(all_fitnesses) > 0)) {
     #if ((the.AIC < best.AIC)) {
-    if (first_fit_gen == 166)
+    if (first_fit_gen == 183)
     {
-      cat("   ====> Best because first_fit_gen == 166", "\n")
+      cat("   ====> Best because first_fit_gen == 183", "\n")
       
       best_model_index = i
       best.AIC = the.AIC;
@@ -418,6 +403,43 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
   }
   
   write.csv(straightened.filtered.output.table, file=file.path(output_path, "output", paste(base_file_name, "_straightened_significant_mutations.csv", sep="")), row.names=F)
+  
+  #Now calculate the theoretical population fitness from the observed variants and what proportion it explains
+  
+  if (best_model_index != 1) {
+    
+    # step_fitnesses has a generation on each row and a fitness
+    # The fitness is for the interval between the generation on that row and the generation on the next row
+    
+    name_to_selection_coefficient = straightened.filtered.output.table %>% select(full_name, selection.coefficient)
+    filtered_table_2_plus_fitness = filtered_table_2 %>% left_join(name_to_selection_coefficient, by="full_name")
+    
+
+    this_step_fitnesses = step_fitnesses[-1,]  
+    this_step_fitnesses$accounted.for.fitness = NA
+    for (i in 1:(nrow(this_step_fitnesses))) {
+      g = this_step_fitnesses$generation[i]
+      
+      this_gen = filtered_table_2_plus_fitness %>% filter(generation==g)
+      this_step_fitnesses$total.mutant.fitness[i] = sum(this_gen$frequency*this_gen$selection.coefficient)
+    }
+    
+    output.table = data.frame()
+    for (i in 1:(nrow(this_step_fitnesses)-1)) {
+      output.table = rbind(output.table,
+                           data.frame(
+                             generation.start = this_step_fitnesses$generation[i], 
+                             generation.end = this_step_fitnesses$generation[i+1], 
+                             population.fitness = this_step_fitnesses$fitness[i], 
+                             total.mutant.fitness = (this_step_fitnesses$total.mutant.fitness[i] + this_step_fitnesses$total.mutant.fitness[i+1]) / 2
+                           )
+      )
+    }
+    output.table$fraction.fitness.accounted.for = output.table$total.mutant.fitness / output.table$population.fitness
+    
+    
+    write.csv(output.table, file.path(output_path, "output", paste(base_file_name, "_population_fitness.csv", sep="")))
+  }
   
 }
 
