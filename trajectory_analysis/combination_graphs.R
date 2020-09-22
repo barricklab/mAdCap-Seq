@@ -47,30 +47,35 @@ combination_graphs <- function ()
   combined.table$gene = factor(as.character(combined.table$gene), levels=names(myColors))
   combined.table$type = factor(as.character(combined.table$type), levels=names(myTypeColors))
   
+  write.csv(combined.table, file.path(output_path, "output", paste("consensus_significant_mutations.csv", sep="")), row.names=F)
   
-  #### filter out the nadR outlier with high fitness
   nrow(combined.table)
-  filtered.table = subset(combined.table, selection.coefficient<0.09)
+  filtered.table = combined.table
+  #filtered.table = subset(combined.table, fitness.effect<0.09)
   nrow(filtered.table)
   
+  this.max.y = 25
   
-  this.max.y = 20
+  ggplot(filtered.table, aes(x=fitness.effect, fill=gene)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + colFillScale + scale_y_continuous(expand = c(0,0), limits = c(0,this.max.y))
+  ggsave(file.path(summary_output_path,"fitness_effects_by_gene.pdf"), width=8, height=5)
   
-  ggplot(filtered.table, aes(x=selection.coefficient, fill=gene)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + colFillScale + scale_y_continuous(expand = c(0,0), limits = c(0,this.max.y))
-  ggsave(file.path(summary_output_path,"selection_coefficients_by_gene.pdf"), width=8, height=5)
+  ggplot(filtered.table, aes(x=fitness.effect, fill=gene)) + geom_histogram(binwidth=0.0025, alpha=1, position="stack", boundary = 0.5) + colFillScale + scale_y_continuous(expand = c(0,0), limits = c(0,16)) + facet_grid(rows=vars(gene))
+  ggsave(file.path(summary_output_path,"fitness_effects_by_gene.pdf"), width=8, height=5)
   
-  ggplot(filtered.table, aes(x=selection.coefficient, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0), limits = c(0,this.max.y)) + typeColFillScale
-  ggsave(file.path(summary_output_path,"selection_coefficients_by_type.pdf"), width=8, height=5) 
+  
+  
+  ggplot(filtered.table, aes(x=fitness.effect, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0), limits = c(0,this.max.y)) + typeColFillScale
+  ggsave(file.path(summary_output_path,"fitness_effects_by_type.pdf"), width=8, height=5) 
   
   facet_table = subset(filtered.table, type %in% c("IS_element", "indel", "nonsynonymous"))
   facet_table = subset(facet_table, gene %in% c("nadR", "pykF", "topA"))
-  ggplot(facet_table, aes(x=selection.coefficient, fill=population)) +facet_grid(type~gene) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0)) 
+  ggplot(facet_table, aes(x=fitness.effect, fill=population)) +facet_grid(type~gene) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0)) 
   ggsave(file.path(summary_output_path,"selection_coefficients_by_type_by_gene.pdf"), width=8, height=5) 
   
-  ggplot(filtered.table, aes(x=selection.coefficient, fill=population)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0))
+  ggplot(filtered.table, aes(x=fitness.effect, fill=population)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + scale_y_continuous(expand = c(0,0))
   ggsave(file.path(summary_output_path,"selection_coefficients_by_population.pdf"), width=8, height=5)
   
-  ggplot(filtered.table, aes(x=selection.coefficient, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack", boundary=0) + scale_y_continuous(expand = c(0,0)) + facet_wrap(~population) + typeColFillScale
+  ggplot(filtered.table, aes(x=fitness.effect, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack", boundary=0) + scale_y_continuous(expand = c(0,0)) + facet_wrap(~population) + typeColFillScale
   ggsave(file.path(summary_output_path,"selection_coefficients_by_population_by_type_colors.pdf"), width=8, height=5)
   
   ggplot(filtered.table, aes(population, fill=gene)) + colFillScale + geom_bar(colour="black") + scale_y_continuous(expand = c(0,0))
@@ -80,8 +85,47 @@ combination_graphs <- function ()
   ####### stats interlude
   
   ## Calc average and sd of all selection coefficients
-  mean(filtered.table$selection.coefficient)
-  sd(filtered.table$selection.coefficient)
+  mean(filtered.table$fitness.effect)
+  sd(filtered.table$fitness.effect)
+  
+  
+  #######
+  # How many times did we see the same mutation in different populations?
+  
+  mutations.in.populations = filtered.table %>% group_by(full_name) %>% summarize(num.populations=n(), populations=paste0(population, collapse = "-")) 
+  
+  mutations.in.multiple.populations = mutations.in.populations %>% filter(num.populations > 1)
+  
+  write.csv(mutations.in.multiple.populations, file.path(summary_output_path,"mutations_in_multiple_populations.csv"))
+  
+  cat("Number of mutations that were found in more than one population: ", nrow(mutations.in.multiple.populations))
+  
+  cat("Number of mutations (counting multi-populations multiple times): ", nrow(filtered.table))
+  cat("Number of distinct mutations (counting multi-populations once): ", nrow(filtered.table) - sum(mutations.in.multiple.populations$num.populations-1 ))
+  
+  
+  ## Make the table look nice here....
+  filtered.table %>% left_join(mutations.in.populations, by="full_name")
+  
+  write.csv(filtered.table, file.path(output_path, "output", paste("consensus_significant_mutations.csv", sep="")), row.names=F)
+  
+  
+  #############
+  # Is there a difference in the distribution of fitness effects across populations?
+  
+  kruskal.test(fitness.effect ~ population, data=filtered.table)
+  
+  # Yes, but it could be for stochastic reasons on the high side and
+  # sampling depth on the low side
+  
+  ggplot(filtered.table, aes(x=population, y=fitness.effect)) + 
+    #colFillScale + 
+    geom_violin(trim=FALSE) + 
+    geom_jitter(width=0.2)
+  
+  ggsave(file.path(summary_output_path,"violin_fitness_effects_by_population.pdf"), width=8, height=5)
+  
+  ##############
   
   three.genes = subset(filtered.table, ((gene == "nadR") | (gene == "pykF") | (gene=="topA")))
   ggplot( three.genes, aes(x=gene, fill=type)) + typeColFillScale + geom_bar(colour="black") + scale_y_continuous(expand = c(0,0))
@@ -93,21 +137,21 @@ combination_graphs <- function ()
   pykF.window.mutations = filtered.table %>% filter(gene=="pykF")
   topA.window.mutations = filtered.table %>% filter(gene=="topA")
   
-  t.test(nadR.window.mutations$selection.coefficient, c(pykF.window.mutations$selection.coefficient, topA.window.mutations$selection.coefficient) )
-  ks.test(nadR.window.mutations$selection.coefficient, c(pykF.window.mutations$selection.coefficient, topA.window.mutations$selection.coefficient) )
+  t.test(nadR.window.mutations$fitness.effect, c(pykF.window.mutations$fitness.effect, topA.window.mutations$fitness.effect) )
+  ks.test(nadR.window.mutations$fitness.effect, c(pykF.window.mutations$fitness.effect, topA.window.mutations$fitness.effect) )
   
-  t.test(nadR.window.mutations$selection.coefficient, topA.window.mutations$selection.coefficient)
-  ks.test(nadR.window.mutations$selection.coefficient, topA.window.mutations$selection.coefficient)
+  t.test(nadR.window.mutations$fitness.effect, topA.window.mutations$fitness.effect)
+  ks.test(nadR.window.mutations$fitness.effect, topA.window.mutations$fitness.effect)
   
-  t.test(topA.window.mutations$selection.coefficient, pykF.window.mutations$selection.coefficient)
-  ks.test(topA.window.mutations$selection.coefficient, pykF.window.mutations$selection.coefficient)
+  t.test(topA.window.mutations$fitness.effect, pykF.window.mutations$fitness.effect)
+  ks.test(topA.window.mutations$fitness.effect, pykF.window.mutations$fitness.effect)
   
   #alternative tests of medians
-  median(nadR.window.mutations$selection.coefficient)
-  median(topA.window.mutations$selection.coefficient)
-  median(pykF.window.mutations$selection.coefficient)
-  wilcox.test(nadR.window.mutations$selection.coefficient, topA.window.mutations$selection.coefficient, alternative="greater")
-  wilcox.test(topA.window.mutations$selection.coefficient, pykF.window.mutations$selection.coefficient, alternative="greater")
+  median(nadR.window.mutations$fitness.effect)
+  median(topA.window.mutations$fitness.effect)
+  median(pykF.window.mutations$fitness.effect)
+  wilcox.test(nadR.window.mutations$fitness.effect, topA.window.mutations$fitness.effect, alternative="greater")
+  wilcox.test(topA.window.mutations$fitness.effect, pykF.window.mutations$fitness.effect, alternative="greater")
   
   
   #######
@@ -122,7 +166,7 @@ combination_graphs <- function ()
   window.population.gene.summarize.table = window.population.gene.summarize.table %>% group_by(population) %>% mutate(p=n/sum(n))
   
   
-  ggplot(filtered.table, aes(x=gene, fill=gene)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + colFillScale + geom_bar(colour="black") + scale_y_continuous(expand=c(0,0), limits = c(0,60)) + scale_x_discrete(drop=FALSE)
+  ggplot(filtered.table, aes(x=gene, fill=gene)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + colFillScale + geom_bar(colour="black") + scale_y_continuous(expand=c(0,0), limits = c(0,100)) + scale_x_discrete(drop=FALSE)
   ggsave(file.path(summary_output_path,"window_mutations_by_gene.pdf"), width=8, height=5)
   
   ggplot(window.population.gene.summarize.table, aes(y = p, x=population, fill=gene)) + colFillScale + geom_bar(colour="black", stat="identity") + scale_y_continuous(labels = percent_format(), expand = c(0,0)) 
@@ -153,9 +197,9 @@ combination_graphs <- function ()
   union_table = table(c(as.character(full.combined.table$full_name_population), as.character(filtered.table$full_name_population)))
   
   
-  full.combined.table$selection.coefficient = 0.01
-  full.combined.table$selection.coefficient.CI95L = 0.0
-  full.combined.table$selection.coefficient.CI95U = 0.0
+  full.combined.table$fitness.effect = 0.01
+  full.combined.table$fitness.effect.CI95L = 0.0
+  full.combined.table$fitness.effect.CI95U = 0.0
   
   #full.combined.table = data.frame()
   
@@ -167,7 +211,7 @@ combination_graphs <- function ()
   full.combined.table = subset (full.combined.table, found.in.both==1)
   
   
-  for.gene.combined.table = data.frame(gene = as.factor(c(as.character(full.combined.table$gene), as.character(filtered.table$gene))), selection.coefficient = c(full.combined.table$selection.coefficient, filtered.table$selection.coefficient), selection.coefficient.CI95L = c(full.combined.table$selection.coefficient.CI95L, filtered.table$selection.coefficient.CI95L), selection.coefficient.CI95U = c(full.combined.table$selection.coefficient.CI95U, filtered.table$selection.coefficient.CI95U), type = as.factor(c(as.character(full.combined.table$type), as.character(filtered.table$type))), population = c(full.combined.table$population, filtered.table$population), position = c(full.combined.table$position, filtered.table$position), full_name_population = as.factor(c(as.character(full.combined.table$full_name_population), as.character(filtered.table$full_name_population))) )
+  for.gene.combined.table = data.frame(gene = as.factor(c(as.character(full.combined.table$gene), as.character(filtered.table$gene))), fitness.effect = c(full.combined.table$fitness.effect, filtered.table$fitness.effect), fitness.effect.CI95L = c(full.combined.table$fitness.effect.CI95L, filtered.table$fitness.effect.CI95L), fitness.effect.CI95U = c(full.combined.table$fitness.effect.CI95U, filtered.table$fitness.effect.CI95U), type = as.factor(c(as.character(full.combined.table$type), as.character(filtered.table$type))), population = c(full.combined.table$population, filtered.table$population), position = c(full.combined.table$position, filtered.table$position), full_name_population = as.factor(c(as.character(full.combined.table$full_name_population), as.character(filtered.table$full_name_population))) )
   
   for.gene.combined.table$found.in.both  = as.factor(union_table[for.gene.combined.table$full_name_population])
   
@@ -181,7 +225,7 @@ combination_graphs <- function ()
   ggplot(population.gene.summarize.table, aes(y = p, x=population, fill=gene) ) + colFillScale + geom_bar(colour="black", stat="identity") + scale_y_continuous(labels = percent_format(), expand = c(0,0))
   ggsave(file.path(summary_output_path,"all_mutations_by_gene_by_population_scaled.pdf"), width=8, height=5)
   
-  ggplot(for.gene.combined.table, aes(x=gene, fill=gene)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + colFillScale + geom_bar(colour="black") + scale_y_continuous(expand=c(0,0), limits = c(0,100)) + scale_x_discrete(drop=FALSE)
+  ggplot(for.gene.combined.table, aes(x=gene, fill=gene)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + colFillScale + geom_bar(colour="black") + scale_y_continuous(expand=c(0,0), limits = c(0,120)) + scale_x_discrete(drop=FALSE)
   ggsave(file.path(summary_output_path,"all_mutations_by_gene.pdf"), width=8, height=5)
   
   for (i in 1:length(levels(for.gene.combined.table$gene))) {
@@ -214,26 +258,27 @@ combination_graphs <- function ()
       gene_end = gene_end - gene_start +1
       gene_start = gene_start - gene_start +1
       
-      this.with.selection.coefficient = subset(this.table, selection.coefficient != 0.01)
-      mean.selection.coefficient = mean(this.with.selection.coefficient$selection.coefficient)
+      this.with.fitness.effect = subset(this.table, fitness.effect != 0.01)
+      mean.fitness.effect = mean(this.with.fitness.effect$fitness.effect)
       
-      p = ggplot(this.table, aes(x=position, y=selection.coefficient, color=type, shape=found.in.both)) 
-      p + geom_segment(aes(x = -500, y = mean.selection.coefficient, xend = gene_end+500, yend = mean.selection.coefficient), color="red", size=0.8, linetype="solid") + geom_segment(aes(x = 1, y = 0, xend = 1, yend = 0.1), color="grey", size=0.8, linetype="solid") + geom_segment(aes(x = gene_end, y = 0, xend = gene_end, yend = 0.1), color="grey", size=0.8, linetype="solid") + geom_point(size=3) + geom_errorbar(aes(ymin=selection.coefficient.CI95L, ymax=selection.coefficient.CI95U), width=0.5) + theme(legend.position="bottom", legend.title=element_blank(), legend.text = element_text(size=9)) + coord_cartesian(ylim=c(0,0.1), xlim=c(-500,gene_end+500)) + typeColScale
+      p = ggplot(this.table, aes(x=position, y=fitness.effect, color=type, shape=found.in.both)) 
+      p + geom_segment(aes(x = -500, y = mean.fitness.effect, xend = gene_end+500, yend = mean.fitness.effect), color="red", size=0.8, linetype="solid") + geom_segment(aes(x = 1, y = 0, xend = 1, yend = 0.1), color="grey", size=0.8, linetype="solid") + geom_segment(aes(x = gene_end, y = 0, xend = gene_end, yend = 0.1), color="grey", size=0.8, linetype="solid") + geom_point(size=3) + geom_errorbar(aes(ymin=fitness.effect.CI95L, ymax=fitness.effect.CI95U), width=0.5) + theme(legend.position="bottom", legend.title=element_blank(), legend.text = element_text(size=9)) + coord_cartesian(ylim=c(0,0.25), xlim=c(-500,gene_end+500)) + typeColScale
       ggsave(file.path(summary_output_path,filename=paste(the.gene, ".pdf", sep="")), width=10, height=6)
       
-      ggplot(this.table, aes(x=selection.coefficient, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + coord_cartesian() + typeColFillScale
+      ggplot(this.table, aes(x=fitness.effect, fill=type)) + geom_histogram(binwidth=0.002, alpha=1, position="stack") + coord_cartesian() + typeColFillScale
       ggsave(file.path(summary_output_path,paste(the.gene, "_selection_coefficients_by_type.pdf", sep="")), width=8, height=5) 
       
       
       ##nonsynonymous versus other test 
-      this.subset.table = subset(this.table, ! ((found.in.both=="one") &(selection.coefficient==0.01)))
+      this.subset.table = subset(this.table, ! ((found.in.both=="one") &(fitness.effect==0.01)))
       
       nonsynonymous_subset = subset(this.subset.table, type=="nonsynonymous")
       not_nonsynonymous_subset = subset(this.subset.table, type!="nonsynonymous")
       res = data.frame(p.value=NA)
-      try( {res = ks.test(nonsynonymous_subset$selection.coefficient, not_nonsynonymous_subset$selection.coefficient) })
+      try( {res = wilcox.test(nonsynonymous_subset$fitness.effect, not_nonsynonymous_subset$fitness.effect) })
       
-      cat (the.gene, " p-value of nonsynonymous different selection coefficients: ", res$p.value, "\n")
+      cat (the.gene, " p-value of Mann-Whitney U test on nonsynonymous different selection coefficients: ", res$p.value, "\n")
+      cat (the.gene, " nonsynonymous median: ", median(nonsynonymous_subset$fitness.effect), " ", " not nonsynonymous median:", median(not_nonsynonymous_subset$fitness.effect), "\n")
     }
   }
   
@@ -292,13 +337,13 @@ combination_graphs <- function ()
   )
   )
   
-  ks.test(c(nadR.first.domain.disruptive.mutation$selection.coefficient,
-            nadR.second.domain.disruptive.mutation$selection.coefficient,
-            nadR.third.domain.disruptive.mutation$selection.coefficient
+  ks.test(c(nadR.first.domain.disruptive.mutation$fitness.effect,
+            nadR.second.domain.disruptive.mutation$fitness.effect,
+            nadR.third.domain.disruptive.mutation$fitness.effect
   ),
-  c(nadR.first.domain.nondisruptive.mutation$selection.coefficient,
-    nadR.second.domain.nondisruptive.mutation$selection.coefficient,
-    nadR.third.domain.nondisruptive.mutation$selection.coefficient
+  c(nadR.first.domain.nondisruptive.mutation$fitness.effect,
+    nadR.second.domain.nondisruptive.mutation$fitness.effect,
+    nadR.third.domain.nondisruptive.mutation$fitness.effect
   ),
   alternative="greater"
   )

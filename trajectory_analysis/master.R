@@ -64,14 +64,14 @@ for (base_file_name in c(window_base_file_names, complete_base_file_names)) {
 
 
 this_autocorrelation_threshold = 0.55
-  for (base_file_name in complete_base_file_names) {
+for (base_file_name in complete_base_file_names) {
     cat(base_file_name, "\n")
     rare_graphs_complete(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), paste(grouped_output_path, sep=""), base_file_name, this_autocorrelation_threshold)
 }
 
 for (base_file_name in window_base_file_names) {
   cat(base_file_name, "\n")
-  rare_graphs_window(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), grouped_output_path, base_file_name)
+  rare_graphs_window(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), grouped_output_path, base_file_name, fitness.bootstrap=T)
 }
 
 consensus_straighten_window_fits(grouped_output_path, window_base_file_names)

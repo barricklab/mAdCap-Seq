@@ -1,11 +1,17 @@
 #fits windows across all populations using the same fitness increase
-consensus_straighten_window_fits <- function(output_path, base_file_names)
+consensus_straighten_window_fits <- function(output_path, base_file_names, fitness.bootstrap = F)
 {
   #debug
   #output_path="grouped_output"
   #base_file_names= c("A1_population_window", "A2_population_window", "A3_population_window", "A6_population_window", "A7_population_window", "A9_population_window")
     
   source("common.R")
+  
+  ### Fitness bootstrapping
+  num.bootstraps = 200
+  
+  ### First generation of fitting fitness
+  first.generation.of.fitness.fitting = 183
   
   ################################################
   
@@ -45,13 +51,17 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     this.generations = as.numeric(levels(as.factor(little_table$generation)))
     this.num_gen_of_data = length(this.generations)
     
-    for (i in 2:num_gen_of_data) {
+    for (i in 1:num_gen_of_data) {
       
-      colname = paste("fitness_", i, sep="")
+      colname = paste("interval_", i, sep="")
       vector_replace = rep(0, this.num_gen_of_data)
       
       gen_final = min(the.generations[i], this.generations[length(this.generations)])
-      gen_initial = the.generations[i-1]
+      if (i==1) {
+        gen_initial = 0
+      } else {
+        gen_initial = the.generations[i-1]
+      }
       
       k = 1
       while ((k < length(this.generations)) && (this.generations[k] < the.generations[i])) {
@@ -68,132 +78,213 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     
   }
   
+  #Need to divide up mutations in different 
+  merged_little_table$full_name = paste0(merged_little_table$population, "-", merged_little_table$full_name)
+  
+  
   write.csv(merged_little_table, file=file.path(output_path, "output", paste("consensus_significant_mutations_table.csv", sep="")))
   
   formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:generation + full_name"
   
-  best_model_index = 0
-  best.AIC = 99999999999
-  best_total_fitnesses = c()
-  fit_slope_intercept = c()
-  for (i in 1:num_gen_of_data) {
+ 
+  #################################
+  
+  ## Set up the real table
+  little_table = merged_little_table
+  
+  
+  
+  #set up individual fit columns
+  the.generations = as.numeric(levels(as.factor(little_table$generation)))
+  num_gen_of_data = length(levels(as.factor(little_table$generation)))
+  
+  
+  set_up_model_data <- function(test.population.fitness.increments, num.intervals, data.table) {
     
-    first_fit_gen = the.generations[num_gen_of_data-i+1]
+    #print(num.intervals)
+    num.intervals.with.fitness = length(test.population.fitness.increments)
+    #print(num.intervals.with.fitness)
     
+    new.data.table = data.table
     
-    fit_slope_intercept[[i]] = glm(as.formula(formula_string), data=merged_little_table, binomial)
-    #a = anova(fit_slope_intercept[[i]], fit_slope_intercept[[i+1]], test = "Chisq")
-    cat("Model with ", i-1, " fitness parameters ::: \n");
+    #The effective generation is each time interval divided by the population fitness in that interval
+    new.data.table[, "effective_generations"] = 0
+    new.data.table[, "generation_offset"] = 0
     
-    the.AIC = AIC(fit_slope_intercept[[i]] )
-    K = attr(logLik(fit_slope_intercept[[i]] ), "df")
-    n = nobs(fit_slope_intercept[[i]] )
-    the.AICc = the.AIC + 2 * K * (K + 1) / (n - K - 1)
-    
-    cat ("  AIC = ", the.AIC, " AICc = ", the.AICc, "\n")
-    
-    
-    all_fitnesses = rep(0, num_gen_of_data-1)
-    if (i != 1) {
+    for (i in 1:num.intervals) {
+      colname = paste("interval_", i, sep="")
+      #print(colname)
       
-      
-      
-      for (j in (i-1):1) {
-        parameter_name = paste("fitness_", as.character(num_gen_of_data-j+1), sep="")
-        gen_final = the.generations[num_gen_of_data-j + 1]
-        gen_initial = the.generations[num_gen_of_data-j]
-        all_fitnesses[num_gen_of_data-j] =  -(coef(fit_slope_intercept[[i]])[parameter_name])
-        
-        cat("  ", parameter_name, " = ", coef(fit_slope_intercept[[i]])[parameter_name], " gen (", gen_initial, "-", gen_final, ") total fitness in interval (per gen) = ", -(coef(fit_slope_intercept[[i]])[parameter_name]), "\n")
+      if (i>num.intervals-num.intervals.with.fitness) {
+        this.fitness = 1 + sum(test.population.fitness.increments[1:(i - (num.intervals-num.intervals.with.fitness))])
+      } else {
+        this.fitness = 1
       }
-    }
       
+      #print(i)
+      #print(this.fitness)
+      
+      new.data.table[, "effective_generations"] = new.data.table[, "effective_generations"] + new.data.table[, colname] / this.fitness
+      new.data.table[, "generation_offset"] = new.data.table[, "generation_offset"] + new.data.table[, colname] * this.fitness
+    }
+    
+    return(new.data.table)
+  }
+  
+  population_fitness_model <- function(test.population.fitness.increments, num.intervals, data.table) {
+    
+    the.data.table = set_up_model_data(test.population.fitness.increments, num.intervals, data.table)
+    formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:effective_generations + full_name + offset(-generation)"
+    fit.model = glm(as.formula(formula_string), data=the.data.table, binomial)
+    return(fit.model)
+  }
+  
+  population_fitness_model_AIC <- function(test.population.fitness.increments, num.intervals, data.table) {
+    
+    fit.model = population_fitness_model(test.population.fitness.increments, num.intervals, data.table)
+    the.AIC = AIC(fit.model)
+    return(the.AIC)
+  }
+  
+  ## Pick mutations with resampling => note, we must give them unique names!
+  bootstrap_table <- function(in.table) {
+    
+    mut.names = unique(in.table$full_name)
+    num.muts = length(mut.names)
+    this.mut.selections = sample(mut.names, length(mut.names), replace=T)
+    
+    new.table = data.frame()
+    for (mut.name in this.mut.selections) {
+      #print(mut.name)
+      
+      new.table = new.table %>% bind_rows(in.table %>% filter(full_name==mut.name))
+    }
+    
+    return(new.table)
+  }
+  
 
-    #if ((the.AIC < best.AIC) && (sum(all_fitnesses) > 0)) {
-    #if ((the.AIC < best.AIC)) {
-    if (first_fit_gen == 190.08)
+  
+  ### Bootstrap the mutations
+  num.fitness.increments = sum(the.generations>first.generation.of.fitness.fitting)
+  
+  set_up_model_data(rep(0,num.fitness.increments), num_gen_of_data, little_table)
+  
+  ## Find ML values for real data
+  real.data.results = optim(rep(0,num.fitness.increments), population_fitness_model_AIC, lower=rep(0,num.fitness.increments), upper=rep(0.1,num.fitness.increments), method="L-BFGS-B", num.intervals = num_gen_of_data, data.table=little_table) 
+  
+  real.data.fitness.increments = real.data.results$par
+  real.data.fit.model = population_fitness_model(real.data.fitness.increments, num.intervals = num_gen_of_data, data.table=little_table)
+  
+  bootstrap.fitness.increments = matrix(rep(NA,num.fitness.increments*num.bootstraps), nrow=num.bootstraps)
+  
+  if (fitness.bootstrap) {
+    
+    ##We need to add the population to the mutation name when bootstrapping
+    little_table_for_bootstrap = little_table
+
+    for(b in 1:num.bootstraps)
     {
-      cat("   ====> Best because first_fit_gen == 190.08", "\n")
+      cat("Bootstrap: ", b, "\n")
+      this.bootstrap.table = bootstrap_table(little_table_for_bootstrap)
       
-      best_model_index = i
-      best.AIC = the.AIC;
-      #best_total_fitnesses = total_fitnesses;
+      bootstrap.results = optim(real.data.fitness.increments, population_fitness_model_AIC, lower=rep(0,num.fitness.increments), upper=rep(0.1,num.fitness.increments), method="L-BFGS-B", num.intervals = num_gen_of_data, data.table=this.bootstrap.table) 
+      
+      print(bootstrap.results$par)
+      bootstrap.fitness.increments[b,] = bootstrap.results$par
     }
-    
-    formula_string = paste(formula_string, " + fitness_", as.character(num_gen_of_data-i+1), sep="")
+  } else {
+    for(b in 1:num.bootstraps) {
+      bootstrap.fitness.increments[b,] = real.data.fitness.increments
+    }
   }
   
-  ## now we need to extract the parameters from the best model, save, and graph
+  #Now add up to actual fitness values
+  bootstrap.fitness = bootstrap.fitness.increments
   
-  cat("Best model has this many fitness parameters: ", (best_model_index-1), "\n")
-  
-  best_model = fit_slope_intercept[[best_model_index]]
-  
-  #For starting at 196
-  #best_model.confint = confint(best_model, c("fitness_6", "fitness_7", "fitness_8", "fitness_9", "fitness_10"))
-  
-  #For starting at 190.08
-  best_model.confint = confint(best_model) #, c("fitness_5", "fitness_6", "fitness_7", "fitness_8", "fitness_9", "fitness_10"))
-  
-  
-  ## here's a bar graph of the fitness over time with error bars
-  
-  
-  if (best_model_index != 1) {
-    
-    fitnesses = data.frame()
-    step_fitnesses = data.frame()
-    step_errors = data.frame()
-    
-    step_fitnesses = rbind(step_fitnesses, data.frame(generation=the.generations[1], fitness=0))
-    
-    this.fitness = 0
-    for (i in (num_gen_of_data-best_model_index+2):num_gen_of_data ) {
-      
-      colname = paste("fitness_", i, sep="")
-      
-      this.fitness = (exp(-coef(best_model)[colname])-1)/log(2)
-      this.fitness.confint.U = (exp(-best_model.confint[colname,1])-1)/log(2)
-      this.fitness.confint.L = (exp(-best_model.confint[colname,2])-1)/log(2)
-      
-      final_gen = the.generations[i]
-      initial_gen = the.generations[i-1]
-      midpoint_gen = (final_gen + initial_gen) / 2
-      
-      fitnesses = rbind(fitnesses, data.frame(generation=midpoint_gen, w = final_gen-initial_gen, fitness=this.fitness, U = this.fitness.confint.U, L = this.fitness.confint.L))
-      
-      step_fitnesses = rbind(step_fitnesses, data.frame(generation=initial_gen, fitness=this.fitness))
-      
-      step_errors = rbind(step_errors, data.frame(generation=midpoint_gen, L = this.fitness.confint.L, U = this.fitness.confint.U))
+  for (c in 1:ncol(bootstrap.fitness)) {
+    for (r in 1:nrow(bootstrap.fitness)) {
+      bootstrap.fitness[r,c] = sum(bootstrap.fitness.increments[r,1:c])
     }
-    step_fitnesses = rbind(step_fitnesses, data.frame(generation=the.generations[num_gen_of_data], fitness=this.fitness))
-    
-    #step plot version
-    
-    p = ggplot(step_errors)
-    p + geom_step(data=step_fitnesses, aes(x=generation, y=fitness), color="black", direction = 'hv') + geom_errorbar(aes(x=generation, ymin=L, ymax=U), width=2) + coord_cartesian(xlim=c(the.generations[1],the.generations[num_gen_of_data]), ylim=c(-0.1,0.15))
-    ggsave(filename=file.path(output_path, "output", paste("consensus_population_fitness_step.pdf", sep="")), width=plot.width, height=plot.height)
-    
-    #bar plot version
-    p = ggplot(fitnesses)
-    p + geom_bar(aes(x=generation, y=fitness, width = w), position = "identity", stat = "identity", fill="gray", color="black") + geom_errorbar(aes(x=generation, ymin=L, ymax=U), width=2) + coord_cartesian(xlim=c(the.generations[1],the.generations[num_gen_of_data]), ylim=c(-0.1,0.15))
-    ggsave(filename=file.path(output_path, "output", paste("consensus_population_fitness.pdf", sep="")), width=plot.width, height=plot.height)
-    
-    #save fitnesses
-    write.csv(step_fitnesses, file.path(output_path, "output", paste("consensus_population_fitness.csv", sep="")))
   }
+  
+  bootstrap.fitness.CI95 = data.frame()
+  for (c in 1:ncol(bootstrap.fitness)) {
+    q = quantile(bootstrap.fitness[,c], probs=c(0.025, 0.975))
+    
+    bootstrap.fitness.CI95 = rbind(bootstrap.fitness.CI95,
+                                   data.frame(generation.end = the.generations[num_gen_of_data-num.fitness.increments+c], 
+                                              population.relative.fitness.L95 = q[1], 
+                                              population.relative.fitness.U95 =q[2])
+    )
+    
+  }
+  
+  #Add maximum likelihood values
+  bootstrap.fitness.CI95$population.relative.fitness = NA
+  for (r in 1:length(real.data.fitness.increments)) {
+    bootstrap.fitness.CI95$population.relative.fitness[r] = sum(real.data.fitness.increments[1:r])
+  }
+  
+  # Convert to relative fitness
+  bootstrap.fitness.CI95$population.relative.fitness = 1+bootstrap.fitness.CI95$population.relative.fitness/log(2)
+  bootstrap.fitness.CI95$population.relative.fitness.L95 = 1+bootstrap.fitness.CI95$population.relative.fitness.L95/log(2)
+  bootstrap.fitness.CI95$population.relative.fitness.U95 = 1+bootstrap.fitness.CI95$population.relative.fitness.U95/log(2)
+  rownames(bootstrap.fitness.CI95) <- NULL
+  
+  #Initial rows
+  
+  initial.rows = data.frame(
+    generation.end=the.generations[1:(num_gen_of_data-num.fitness.increments)],
+    population.relative.fitness=rep(1,num_gen_of_data-num.fitness.increments),
+    population.relative.fitness.L95=rep(NA,num_gen_of_data-num.fitness.increments),
+    population.relative.fitness.U95=rep(NA,num_gen_of_data-num.fitness.increments)
+  )
+  
+  bootstrap.fitness.CI95 = initial.rows %>% bind_rows(bootstrap.fitness.CI95)
+  bootstrap.fitness.CI95$generation.start = 0
+  bootstrap.fitness.CI95$generation.start[2:length(bootstrap.fitness.CI95$generation.start)] = bootstrap.fitness.CI95$generation.end[1:(length(bootstrap.fitness.CI95$generation.start)-1)]
+  bootstrap.fitness.CI95 = bootstrap.fitness.CI95 %>% relocate(generation.start, .before = generation.end)
+  
+  bootstrap.fitness.CI95$was.fit = (bootstrap.fitness.CI95$generation.end > the.generations[num_gen_of_data-num.fitness.increments]) 
+  
+  write.csv(bootstrap.fitness.CI95, file=file.path(output_path, "output", paste("consensus_population_fitness.csv", sep="")), row.names=F)
+  
+  
+  ## Step plot of the fitness over time
+  
+  graphing.fitness.step = bootstrap.fitness.CI95
+  graphing.fitness.step = graphing.fitness.step %>% rbind(graphing.fitness.step[nrow(graphing.fitness.step),])
+  graphing.fitness.step$generation.start[nrow(graphing.fitness.step)] = graphing.fitness.step$generation.end[nrow(graphing.fitness.step)]
+  graphing.fitness.step$population.relative.fitness.L95[nrow(graphing.fitness.step)] = NA
+  graphing.fitness.step$population.relative.fitness.U95[nrow(graphing.fitness.step)] = NA
+  graphing.fitness.step$generation.mean = (graphing.fitness.step$generation.start + graphing.fitness.step$generation.end)/2
+  graphing.fitness.step$generation = graphing.fitness.step$generation.start
+  
+  p = ggplot(graphing.fitness.step) + 
+    geom_step(aes(x=generation, y=population.relative.fitness), color="black", direction = 'hv') + 
+    geom_errorbar(aes(x=generation.mean, ymin=population.relative.fitness.L95, ymax=population.relative.fitness.U95), width=2) + 
+    coord_cartesian(xlim=c(the.generations[1],the.generations[num_gen_of_data]), ylim=c(1,1.12))
+  ggsave(filename=file.path(output_path, "output", paste("consensus_population_fitness_step.pdf", sep="")), width=plot.width, height=plot.height)
+  
+  #####################
   
   ## compare to per population fitness model with same number of parameters
   
-  formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:generation + full_name"
-  for (i in best_model_index:num_gen_of_data) {
-    formula_string = paste(formula_string, " + population:fitness_", as.character(i), sep="")
-  }
-  per_population_model = glm(as.formula(formula_string), data=merged_little_table, binomial)
+#  formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:generation + full_name"
+#  for (i in best_model_index:num_gen_of_data) {
+#    formula_string = paste(formula_string, " + population:fitness_", as.character(i), sep="")
+#  }
+#  per_population_model = glm(as.formula(formula_string), data=merged_little_table, binomial)
   
-  anova(best_model, per_population_model, test="Chisq")
+#  anova(best_model, per_population_model, test="Chisq")
   
   ##Per-population models fit much better
+  
+  best_model = real.data.fit.model
+  best_model.confint = confint(best_model)
+  set_up_model_table = set_up_model_data(real.data.fitness.increments, num_gen_of_data, little_table)
+  
   
   population.accounted.for.fitness.table = data.frame()
   
@@ -212,28 +303,22 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     for (i in 1:nrow(straightened.filtered.output.table)) {
       
       this_full_name = as.character(straightened.filtered.output.table$full_name[i])
+      this_full_name_plus_population = paste0(base_file_name, "-" , this_full_name)
       
-      slope_name = paste("full_name", this_full_name, ":generation", sep="")
-      intercept_name = paste("full_name", this_full_name, sep="")
+      slope_name = paste("full_name", this_full_name_plus_population, ":effective_generations", sep="")
+      intercept_name = paste("full_name", this_full_name_plus_population, sep="")
       
       this.slope = coef(best_model)[slope_name]
       this.slope.stderr =  summary(best_model)$coefficients[, 2][slope_name]
       
-      straightened.filtered.output.table$selection.coefficient[i] = exp(this.slope)-1
-      straightened.filtered.output.table$selection.coefficient.CI95L[i] = exp(best_model.confint[slope_name, 1])-1
-      straightened.filtered.output.table$selection.coefficient.CI95U[i] = exp(best_model.confint[slope_name, 2])-1
-      
-      straightened.filtered.output.table$fitness.effect[i] = straightened.filtered.output.table$selection.coefficient[i]/log(2)
-      straightened.filtered.output.table$fitness.effect.CI95L[i] = straightened.filtered.output.table$selection.coefficient.CI95L[i]/log(2)
-      straightened.filtered.output.table$fitness.effect.CI95U[i] = straightened.filtered.output.table$selection.coefficient.CI95U[i]/log(2)
-      
-      straightened.filtered.output.table$slope[i] = this.slope
-      straightened.filtered.output.table$slope.stderr[i] = this.slope.stderr 
+      straightened.filtered.output.table$fitness.effect[i] = (this.slope-1)/log(2)
+      straightened.filtered.output.table$fitness.effect.CI95L[i] = (best_model.confint[slope_name, 1]-1)/log(2)
+      straightened.filtered.output.table$fitness.effect.CI95U[i] = (best_model.confint[slope_name, 2]-1)/log(2)
       
       ##graph the straightened fits
       # this section produces graphs for all of the ones that were significant that include
       # binomial confidence intervals that account for the counts
-      test_series = subset(this.population.table, full_name==this_full_name)
+      test_series = subset(set_up_model_table, full_name==this_full_name_plus_population)
       
       test_series$fit = predict(best_model, test_series, type="response")
       test_series$log_fit = log10(predict(best_model, test_series, type="response"))
@@ -249,7 +334,7 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
       if (all(test_series$variant_read_count != test_series$total_read_count)) {    
         p = ggplot(test_series, aes(x=generation, y=log_frequency, color=gene, group=evidence))
         p + geom_line(size=line_thickness) + geom_line(aes(x=generation, y=log_fit), color="black") + geom_errorbar(aes(ymin=L95.CI, ymax=U95.CI), width=0.2) + coord_cartesian(xlim=generation_bounds, ylim=log_frequency_bounds)       
-        ggsave(filename=file.path(output_path, "graphs", paste(base_file_name, "/", this_full_name, ".consensus.straightened", ".pdf", sep="")), width=plot.width, height=plot.height)
+        ggsave(filename=file.path(output_path, "graphs", paste(base_file_name, "/", this_full_name, "_consensus.straightened", ".pdf", sep="")), width=plot.width, height=plot.height)
       }
       
     }
@@ -260,8 +345,8 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     name_to_fitness = straightened.filtered.output.table %>% select(full_name, fitness.effect)
     merged_little_table_plus_fitness =  merged_little_table %>% filter(population==base_file_name) %>% left_join(name_to_fitness, by="full_name")
     
-    for (i in 1:(nrow(step_fitnesses))) {
-      g = step_fitnesses$generation[i]
+    for (i in 1:(nrow(graphing.fitness.step)-1)) {
+      g = graphing.fitness.step$generation.end[i]
       
       this_gen = merged_little_table_plus_fitness %>% filter(generation==g)
 
@@ -279,39 +364,6 @@ consensus_straighten_window_fits <- function(output_path, base_file_names)
     }
   }
   
-  
-  if (best_model_index != 1) {
-    
-    # step_fitnesses has a generation on each row and a fitness
-    # The fitness is for the interval between the generation on that row and the generation on the next row
-    
-    
-    merged_little_table_plus_fitness = filtered_table_2 %>% left_join(name_to_selection_coefficient, by="full_name")
-    
-    
-
-    this_step_fitnesses$accounted.for.fitness = NA
-    for (i in 1:(nrow(this_step_fitnesses))) {
-      g = this_step_fitnesses$generation[i]
-      
-      this_gen = filtered_table_2_plus_fitness %>% filter(generation==g)
-      this_step_fitnesses$total.mutant.fitness[i] = sum(this_gen$frequency*this_gen$selection.coefficient)
-    }
-    
-    for (i in 1:(nrow(this_step_fitnesses)-1)) {
-      output.table = rbind(output.table,
-                           data.frame(
-                             generation.start = this_step_fitnesses$generation[i], 
-                             generation.end = this_step_fitnesses$generation[i+1], 
-                             population.fitness = this_step_fitnesses$fitness[i], 
-                             total.mutant.fitness = (this_step_fitnesses$total.mutant.fitness[i] + this_step_fitnesses$total.mutant.fitness[i+1]) / 2
-                           )
-      )
-    }
-    output.table$fraction.fitness.accounted.for = output.table$total.mutant.fitness / output.table$population.fitness
-    
-    
-    write.csv(output.table, file.path(output_path, "output", paste(base_file_name, "_population_fitness.csv", sep="")))
-  }
-  
+  write.csv(population.accounted.for.fitness.table, file.path(output_path, "output", paste("consensus_tracked_mutation_total_fitness.csv", sep="")))
 }
+
