@@ -2,9 +2,7 @@
 
 Scripts and processed data files to accompany:
 
-Deatherage, D.E., Barrick, J.E. **Profiling the initial burst of
-beneficial genetic diversity to anticipate evolution of a cell
-population**
+Deatherage, D.E., Barrick, J.E. **Profiling the initial burst of beneficial genetic diversity in clonal cell populations to anticipate evolution**. https://doi.org/10.1101/2020.07.10.196832
 
 ## Overview
 
@@ -17,5 +15,5 @@ output is converted into a format with the reads supporting the
 reference versus variant alleles using `breseq_postprocessing`. Then
 `trajectory_analysis` contains the main scripts for filtering and
 analyzing the trajectories of mutation frequencies. `LTEE-compare` and
-`protein_structure` contain scripts for the final analyses of the sets
-of predicted mutations.
+`protein_structure` contain scripts and information for further analyzing
+the sets of predicted mutations.
