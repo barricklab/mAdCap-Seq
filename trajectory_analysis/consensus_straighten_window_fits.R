@@ -4,7 +4,9 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
   #debug
   #output_path="grouped_output"
   #base_file_names= c("A1_population_window", "A2_population_window", "A3_population_window", "A6_population_window", "A7_population_window", "A9_population_window")
-    
+  #fitness.bootstrap = F
+  
+  
   source("common.R")
   
   ### Fitness bootstrapping
@@ -78,8 +80,8 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
     
   }
   
-  #Need to divide up mutations in different 
-  merged_little_table$full_name = paste0(merged_little_table$population, "-", merged_little_table$full_name)
+  #Need to divide up mutations in different populations for some analyses
+  merged_little_table$full_name_population = paste0(merged_little_table$population, "-", merged_little_table$full_name)
   
   
   write.csv(merged_little_table, file=file.path(output_path, "output", paste("consensus_significant_mutations_table.csv", sep="")))
@@ -134,7 +136,13 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
   population_fitness_model <- function(test.population.fitness.increments, num.intervals, data.table) {
     
     the.data.table = set_up_model_data(test.population.fitness.increments, num.intervals, data.table)
-    formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:effective_generations + full_name + offset(-generation)"
+    
+    #This model fits
+    formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:effective_generations + full_name_population + offset(-generation)"
+    
+    #This is an alternative model that fits different selection coefficients for the same mutation per population
+    #formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name_population:effective_generations + full_name_population + offset(-generation)"
+    
     fit.model = glm(as.formula(formula_string), data=the.data.table, binomial)
     return(fit.model)
   }
@@ -267,19 +275,8 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
     coord_cartesian(xlim=c(the.generations[1],the.generations[num_gen_of_data]), ylim=c(1,1.12))
   ggsave(filename=file.path(output_path, "output", paste("consensus_population_fitness_step.pdf", sep="")), width=plot.width, height=plot.height)
   
-  #####################
-  
-  ## compare to per population fitness model with same number of parameters
-  
-#  formula_string = "cbind(variant_read_count, not_variant_read_count) ~ 0 + full_name:generation + full_name"
-#  for (i in best_model_index:num_gen_of_data) {
-#    formula_string = paste(formula_string, " + population:fitness_", as.character(i), sep="")
-#  }
-#  per_population_model = glm(as.formula(formula_string), data=merged_little_table, binomial)
-  
-#  anova(best_model, per_population_model, test="Chisq")
-  
-  ##Per-population models fit much better
+
+  ##### Prepare the data for printing
   
   best_model = real.data.fit.model
   best_model.confint = confint(best_model)
@@ -303,10 +300,10 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
     for (i in 1:nrow(straightened.filtered.output.table)) {
       
       this_full_name = as.character(straightened.filtered.output.table$full_name[i])
-      this_full_name_plus_population = paste0(base_file_name, "-" , this_full_name)
+      this_full_name_population = paste0(base_file_name, "-" , this_full_name)
       
-      slope_name = paste("full_name", this_full_name_plus_population, ":effective_generations", sep="")
-      intercept_name = paste("full_name", this_full_name_plus_population, sep="")
+      slope_name = paste("full_name", this_full_name, ":effective_generations", sep="")
+      intercept_name = paste("full_name_population", this_full_name_population, sep="")
       
       this.slope = coef(best_model)[slope_name]
       this.slope.stderr =  summary(best_model)$coefficients[, 2][slope_name]
@@ -318,7 +315,7 @@ consensus_straighten_window_fits <- function(output_path, base_file_names, fitne
       ##graph the straightened fits
       # this section produces graphs for all of the ones that were significant that include
       # binomial confidence intervals that account for the counts
-      test_series = subset(set_up_model_table, full_name==this_full_name_plus_population)
+      test_series = subset(set_up_model_table, full_name==this_full_name)
       
       test_series$fit = predict(best_model, test_series, type="response")
       test_series$log_fit = log10(predict(best_model, test_series, type="response"))

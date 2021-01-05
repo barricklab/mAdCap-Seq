@@ -1,6 +1,8 @@
 # Output files
 *.pdf
 *_output
+grouped_input
+_*
 
 # History files
 .Rhistory

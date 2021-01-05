@@ -40,48 +40,45 @@ def aa_position(dna_position=0, testing=False):
     return ceiling_division(dna_position, 3)
 
 dna_positions = []
-for file_in in os.listdir("../Rare_variant_figure_data"):
-    if file_in.endswith("significant_mutations.csv"):
-        with open("../Rare_variant_figure_data/" + file_in, "r") as fin:
-            for line in fin:
-                if re.search("pykF.*nonsynonymous", line):
-                    line=line.rstrip().split(",")
-                    try:
-                        pos = int(line[3]) - 1630  # as per 1400 bp flanking file but want bp 1 to be first base of cds
-                    except(ValueError):  # in window file, position in column E not D
-                        pos = int(line[4]) - 1630  # as per 1400 bp flanking file but want bp 1 to be first base of cds
-                    assert 1 <= pos <= 1412, "Converted DNA position not within bounds of gene length %s" % pos
-                    dna_positions.append(pos)
-print(len(dna_positions), "total pykF mutations")
+with open("../trajectory_analysis/grouped_output/summary/complete_all_mutations_unique_events.csv", "r") as fin:
+    for line in fin:
+        if re.search("pykF.*nonsynonymous", line):
+            line=line.rstrip().split(",")
+            try:
+                pos = int(line[7]) - 1630  # as per 1400 bp flanking file but want bp 1 to be first base of cds
+            except(ValueError):  # in window file, position in column E not D
+                pos = int(line[4]) - 1630  # as per 1400 bp flanking file but want bp 1 to be first base of cds
+            assert 1 <= pos <= 1412, "Converted DNA position not within bounds of gene length %s" % pos
+            dna_positions.append(pos)
+print(len(dna_positions), "total nonsynonymous pykF mutations")
+print(sorted(dna_positions))
+print(len(sorted(set(dna_positions))), "nonsynonymous pykF mutations at unique DNA positions")
 print(sorted(set(dna_positions)))
-print(len(sorted(set(dna_positions))), "pykF mutations at unique DNA positions")
 
 aa_positions = [aa_position(x) for x in dna_positions]
-print(sorted(set(aa_positions)))
 print(len(sorted(set(aa_positions))), "different pykF AA mutated")
-
+print(sorted(set(aa_positions)))
 print("sele pykF_Muts, resi " + " + resi ".join(str(x) for x in sorted(set(aa_positions))))
 
 
 dna_positions = []
-for file_in in os.listdir("../Rare_variant_figure_data"):
-    if file_in.endswith("significant_mutations.csv"):
-        with open("../Rare_variant_figure_data/" + file_in, "r") as fin:
-            for line in fin:
-                if re.search("topA.*nonsynonymous", line):
-                    line=line.rstrip().split(",")
-                    try:
-                        pos = int(line[3]) - 1658  # as per 1400 bp flanking file but want bp 1 to be first base of cds
-                    except(ValueError):  # in window file, postition in column E not D
-                        pos = int(line[4]) - 1658  # as per 1400 bp flanking file but want bp 1 to be first base of cds
-                    assert 1 <= pos <= 2597, "Converted DNA position not within bounds of gene length %s" % pos
-                    dna_positions.append(pos)
-print(len(dna_positions), "total topA mutations")
+with open("../trajectory_analysis/grouped_output/summary/complete_all_mutations_unique_events.csv", "r") as fin:
+    for line in fin:
+        if re.search("topA.*nonsynonymous", line):
+            line=line.rstrip().split(",")
+            try:
+                pos = int(line[7]) - 1658  # as per 1400 bp flanking file but want bp 1 to be first base of cds
+            except(ValueError):  # in window file, postition in column E not D
+                pos = int(line[4]) - 1658  # as per 1400 bp flanking file but want bp 1 to be first base of cds
+            assert 1 <= pos <= 2597, "Converted DNA position not within bounds of gene length %s" % pos
+            dna_positions.append(pos)
+print(len(dna_positions), "total nonsynonymous topA mutations")
+print(sorted(dna_positions))
+print(len(sorted(set(dna_positions))), "nonsynonymous topA mutations at unique DNA positions")
 print(sorted(set(dna_positions)))
-print(len(sorted(set(dna_positions))), "topA mutations at unique DNA positions")
 
 aa_positions = [aa_position(x) for x in dna_positions]
-print(sorted(set(aa_positions)))
 print(len(sorted(set(aa_positions))), "different topA AA mutated")
+print(sorted(set(aa_positions)))
 
 print("sele topA_Muts, resi " + " + resi ".join(str(x) for x in sorted(set(aa_positions))))

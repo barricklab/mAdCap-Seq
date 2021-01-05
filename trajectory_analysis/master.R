@@ -71,7 +71,7 @@ for (base_file_name in complete_base_file_names) {
 
 for (base_file_name in window_base_file_names) {
   cat(base_file_name, "\n")
-  rare_graphs_window(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), grouped_output_path, base_file_name, fitness.bootstrap=T)
+  rare_graphs_window(file.path(grouped_input_path, paste(base_file_name, ".variant.tsv", sep="")), file.path(grouped_input_path, paste(base_file_name, ".total.tsv", sep="")), grouped_output_path, base_file_name, fitness.bootstrap=F)
 }
 
 consensus_straighten_window_fits(grouped_output_path, window_base_file_names)

@@ -32,7 +32,7 @@ util.cbay so4
    -32.694007874,  -13.068845749,   62.495571136,\
    230.159210205,  548.153015137,  -20.000000000 )
 
-# Alt view appropriate if psuedo atoms were/are-to-be added  
+# Alt view appropriate if psuedo atoms were/are-to-be added
 set_view (\
     -0.103447556,    0.789930403,    0.604408443,\
      0.163329959,   -0.585928917,    0.793732107,\
@@ -46,7 +46,7 @@ scene two_tetramers_color_by_chain, store
 
 set cartoon_transparency, 0.4, 4yng
 
-# set up selections for different domains 
+# set up selections for different domains
 sele domainA, resi 1-70 + resi 171-345
 sele domainB, resi 71-170
 sele domainC, resi 352-470
@@ -60,12 +60,18 @@ scene color_by_domain, store
 
 
 # select mutations (taken from mutations_for_pymol.py output)
-sele pykF_Muts, resi 9 + resi 69 + resi 70 + resi 92 + resi 101 + resi 144 + resi 177 + resi 190 + resi 193 + resi 224 + resi 239 + resi 240 + resi 243 + resi 245 + resi 248 + resi 254 + resi 257 + resi 261 + resi 264 + resi 278 + resi 280 + resi 296 + resi 301 + resi 306 + resi 312 + resi 313 + resi 327 + resi 328 + resi 353 + resi 362 + resi 380 + resi 381 + resi 385 + resi 400 + resi 460
+
+## Original
+# sele pykF_Muts, resi 9 + resi 69 + resi 70 + resi 92 + resi 101 + resi 144 + resi 177 + resi 190 + resi 193 + resi 224 + resi 239 + resi 240 + resi 243 + resi 245 + resi 248 + resi 254 + resi 257 + resi 261 + resi 264 + resi 278 + resi 280 + resi 296 + resi 301 + resi 306 + resi 312 + resi 313 + resi 327 + resi 328 + resi 353 + resi 362 + resi 380 + resi 381 + resi 385 + resi 400 + resi 460
+
+## Updated for new mutations 2020-12-07
+sele pykF_Muts, resi 9 + resi 32 + resi 69 + resi 70 + resi 92 + resi 101 + resi 144 + resi 177 + resi 190 + resi 193 + resi 220 + resi 224 + resi 233 + resi 239 + resi 240 + resi 243 + resi 245 + resi 248 + resi 254 + resi 255 + resi 257 + resi 261 + resi 264 + resi 278 + resi 280 + resi 296 + resi 301 + resi 306 + resi 307 + resi 310 + resi 312 + resi 313 + resi 327 + resi 328 + resi 353 + resi 356 + resi 361 + resi 362 + resi 380 + resi 381 + resi 385 + resi 400 + resi 460
+
 util.cbag pykF_Mut
 set cartoon_transparency, 0.0, pykF_Muts
 scene mutations_cartoon, store
 
-
+hide everthing, so4
 show spheres, pykF_Muts
 scene mutations_spheres, store
 
@@ -87,7 +93,7 @@ scene monomer_vs_momomerConnections_vs_domain_mutations, store
 #﻿hide (chain E &! chain_interface)
 
 
-hide (so4)
+hide everything, so4
 util.cbc
 scene mutations_by_chain_and_domain, store
 

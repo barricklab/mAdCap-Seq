@@ -21,7 +21,7 @@ hide cartoon, DNA
 show sticks, DNA
 util.cbaw so4 + tmp
 sele topA, Chain X &! (resn SO4 | resn TMP)
-color brown, DNA
+color marine, DNA
 hide cartoon, tmp
 show spheres, tmp
 color black, tmp
@@ -63,10 +63,17 @@ scene Domains, store
 
 
 # select mutations (taken from mutations_for_pymol.py output)
-sele topA_Muts, resi 34 + resi 36 + resi 74 + resi 76 + resi 109 + resi 115 + resi 127 + resi 134 + resi 139 + resi 151 + resi 179 + resi 187 + resi 191 + resi 192 + resi 205 + resi 286 + resi 293 + resi 323 + resi 367 + resi 391 + resi 496 + resi 560 + resi 567 + resi 586
 
+## Original
+#sele topA_Muts, resi 34 + resi 36 + resi 74 + resi 76 + resi 109 + resi 115 + resi 127 + resi 134 + resi 139 + resi 151 + resi 179 + resi 187 + resi 191 + resi 192 + resi 205 + resi 286 + resi 293 + resi 323 + resi 367 + resi 391 + resi 496 + resi 560 + resi 567 + resi 586
 # below are additional mutations in regions not modeled by 1mw8
 # + resi 617 + resi 622 + resi 761 + resi 774 + resi 778 + resi 780 + resi 793
+
+## Updated for new mutations 2020-12-07
+sele topA_Muts, resi 34 + resi 35 + resi 36 + resi 74 + resi 76 + resi 109 + resi 115 + resi 121 + resi 127 + resi 128 + resi 134 + resi 139 + resi 151 + resi 165 + resi 179 + resi 187 + resi 191 + resi 192 + resi 193 + resi 205 + resi 286 + resi 290 + resi 293 + resi 323 + resi 328 + resi 367 + resi 391 + resi 494 + resi 496 + resi 560 + resi 567 + resi 586
+# below are additional mutations in regions not modeled by 1mw8
+# + resi 617 + resi 622 + resi 761 + resi 774 + resi 778 + resi 780 + resi 793
+
 util.cbag topA_Muts
 
 set cartoon_transparency, 0.0, topA_Muts
@@ -74,6 +81,8 @@ scene mutations_cartoon, store
 
 
 show spheres, topA_Muts
+hide everything, so4
+hide everything, tmp
 scene mutations_spheres, store
 
 # set of scenes to show each domain's mutations indvidually

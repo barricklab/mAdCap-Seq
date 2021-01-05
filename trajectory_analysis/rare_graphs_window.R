@@ -46,8 +46,8 @@ rare_graphs_window <- function (variant_read_counts_file_name, total_read_counts
   line_thickness = 0.8
   log_frequency_bounds = c(-5,0)
   generation_bounds = c(163,243.44)
-  myColors <- c("purple", "magenta", "orange", "green", "red", "blue", "brown", "cyan", "grey")
-  names(myColors) <- c("hslU", "iclR", "pykF", "nadR", "spoT", "topA", "ybaL", "fabR", "other")
+  myColors <- c("green", "orange", "blue", "red", "cyan", "brown", "purple", "magenta", "grey")
+  names(myColors) <- c("nadR", "pykF", "topA", "spoT", "fabR", "ybaL", "iclR", "hslU", "other")
   colScale <- scale_colour_manual(name = "Gene",values = myColors)
   
   
