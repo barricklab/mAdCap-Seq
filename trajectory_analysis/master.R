@@ -7,7 +7,7 @@ source("grouped_mutations_find.R")
 source("consensus_straighten_window_fits.R")
 source("detection_limits.R")
 source("combination_graphs.R")
-
+source("fraction_fitness_increase.R")
 
 complete_base_file_names = c("A1_population_complete", "A2_population_complete", "A3_population_complete", "A7_population_complete")
 
@@ -79,3 +79,5 @@ consensus_straighten_window_fits(grouped_output_path, window_base_file_names)
 combination_graphs()
 
 detection_limits()
+
+fraction_fitness_increase()
